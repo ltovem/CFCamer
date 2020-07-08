@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -106,7 +106,6 @@
 				64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */,
 				006D9513742395CA6CB5BB09 /* Pods-CFCamerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,6 +144,7 @@
 		9BE5EACB24B5B08300828161 /* CFCamer */ = {
 			isa = PBXGroup;
 			children = (
+				9BE5EB0124B5B8DF00828161 /* Class */,
 				9BE5EACC24B5B08300828161 /* AppDelegate.h */,
 				9BE5EACD24B5B08300828161 /* AppDelegate.m */,
 				9BE5EACF24B5B08300828161 /* SceneDelegate.h */,
@@ -176,6 +176,53 @@
 				9BE5EAF524B5B08600828161 /* Info.plist */,
 			);
 			path = CFCamerUITests;
+			sourceTree = "<group>";
+		};
+		9BE5EB0124B5B8DF00828161 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				9BE5EB0224B5B8DF00828161 /* Home */,
+				9BE5EB0324B5B8DF00828161 /* Shop */,
+				9BE5EB0424B5B8DF00828161 /* Album  */,
+				9BE5EB0524B5B8DF00828161 /* Profile */,
+				9BE5EB0624B5B8DF00828161 /* Camera  */,
+			);
+			path = Class;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BE5EB0224B5B8DF00828161 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9BE5EB0324B5B8DF00828161 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		9BE5EB0424B5B8DF00828161 /* Album  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Album ";
+			sourceTree = "<group>";
+		};
+		9BE5EB0524B5B8DF00828161 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9BE5EB0624B5B8DF00828161 /* Camera  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Camera ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
