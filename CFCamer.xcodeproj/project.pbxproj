@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09F61F7C86F7E7BA88A09B49 /* Pods_CFCamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7AB98909DDD7EBB97AD94E /* Pods_CFCamer.framework */; };
+		13428F74C528D06268FA790C /* Pods_CFCamer_CFCamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */; };
+		8C346F7D184074EFF87CEF03 /* Pods_CFCamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */; };
 		9BE5EACE24B5B08300828161 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EACD24B5B08300828161 /* AppDelegate.m */; };
 		9BE5EAD124B5B08300828161 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD024B5B08300828161 /* SceneDelegate.m */; };
 		9BE5EAD424B5B08300828161 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD324B5B08300828161 /* ViewController.m */; };
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006D9513742395CA6CB5BB09 /* Pods-CFCamerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamerTests.release.xcconfig"; path = "Target Support Files/Pods-CFCamerTests/Pods-CFCamerTests.release.xcconfig"; sourceTree = "<group>"; };
+		1D7AB98909DDD7EBB97AD94E /* Pods_CFCamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E551E3DCDBB3E3C6DA084F /* Pods-CFCamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer.release.xcconfig"; path = "Target Support Files/Pods-CFCamer/Pods-CFCamer.release.xcconfig"; sourceTree = "<group>"; };
+		64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamerTests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamerTests/Pods-CFCamerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamer_CFCamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE5EAC924B5B08300828161 /* CFCamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFCamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE5EACC24B5B08300828161 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BE5EACD24B5B08300828161 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +63,9 @@
 		9BE5EAEF24B5B08600828161 /* CFCamerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CFCamerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE5EAF324B5B08600828161 /* CFCamerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFCamerUITests.m; sourceTree = "<group>"; };
 		9BE5EAF524B5B08600828161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF0B2F11FA1273967CEB118C /* Pods-CFCamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer/Pods-CFCamer.debug.xcconfig"; sourceTree = "<group>"; };
+		C69175AE71CE290EF5BE4219 /* Pods-CFCamer-CFCamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF40811524970F9F70FD0CA5 /* Pods-CFCamer-CFCamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.release.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F61F7C86F7E7BA88A09B49 /* Pods_CFCamer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C346F7D184074EFF87CEF03 /* Pods_CFCamerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +89,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13428F74C528D06268FA790C /* Pods_CFCamer_CFCamerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05D13A61F89D954AEEB1F4A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF0B2F11FA1273967CEB118C /* Pods-CFCamer.debug.xcconfig */,
+				60E551E3DCDBB3E3C6DA084F /* Pods-CFCamer.release.xcconfig */,
+				C69175AE71CE290EF5BE4219 /* Pods-CFCamer-CFCamerUITests.debug.xcconfig */,
+				DF40811524970F9F70FD0CA5 /* Pods-CFCamer-CFCamerUITests.release.xcconfig */,
+				64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */,
+				006D9513742395CA6CB5BB09 /* Pods-CFCamerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		147CFD2CF27E61F1E244FEC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D7AB98909DDD7EBB97AD94E /* Pods_CFCamer.framework */,
+				848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */,
+				69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BE5EAC024B5B08300828161 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +127,8 @@
 				9BE5EAE724B5B08600828161 /* CFCamerTests */,
 				9BE5EAF224B5B08600828161 /* CFCamerUITests */,
 				9BE5EACA24B5B08300828161 /* Products */,
+				05D13A61F89D954AEEB1F4A3 /* Pods */,
+				147CFD2CF27E61F1E244FEC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +185,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BE5EAF824B5B08600828161 /* Build configuration list for PBXNativeTarget "CFCamer" */;
 			buildPhases = (
+				956921D4C76AAB9AB453B682 /* [CP] Check Pods Manifest.lock */,
 				9BE5EAC524B5B08300828161 /* Sources */,
 				9BE5EAC624B5B08300828161 /* Frameworks */,
 				9BE5EAC724B5B08300828161 /* Resources */,
@@ -161,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BE5EAFB24B5B08600828161 /* Build configuration list for PBXNativeTarget "CFCamerTests" */;
 			buildPhases = (
+				83205178AAA6B4DC916CB5A6 /* [CP] Check Pods Manifest.lock */,
 				9BE5EAE024B5B08600828161 /* Sources */,
 				9BE5EAE124B5B08600828161 /* Frameworks */,
 				9BE5EAE224B5B08600828161 /* Resources */,
@@ -179,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BE5EAFE24B5B08600828161 /* Build configuration list for PBXNativeTarget "CFCamerUITests" */;
 			buildPhases = (
+				236A441B2FA4819264AFDA42 /* [CP] Check Pods Manifest.lock */,
 				9BE5EAEB24B5B08600828161 /* Sources */,
 				9BE5EAEC24B5B08600828161 /* Frameworks */,
 				9BE5EAED24B5B08600828161 /* Resources */,
@@ -261,6 +305,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		236A441B2FA4819264AFDA42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CFCamer-CFCamerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83205178AAA6B4DC916CB5A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CFCamerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		956921D4C76AAB9AB453B682 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CFCamer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BE5EAC524B5B08300828161 /* Sources */ = {
@@ -437,6 +550,7 @@
 		};
 		9BE5EAF924B5B08600828161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF0B2F11FA1273967CEB118C /* Pods-CFCamer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +568,7 @@
 		};
 		9BE5EAFA24B5B08600828161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E551E3DCDBB3E3C6DA084F /* Pods-CFCamer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +586,7 @@
 		};
 		9BE5EAFC24B5B08600828161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +607,7 @@
 		};
 		9BE5EAFD24B5B08600828161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006D9513742395CA6CB5BB09 /* Pods-CFCamerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +628,7 @@
 		};
 		9BE5EAFF24B5B08600828161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69175AE71CE290EF5BE4219 /* Pods-CFCamer-CFCamerUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3X65YXD245;
@@ -529,6 +647,7 @@
 		};
 		9BE5EB0024B5B08600828161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF40811524970F9F70FD0CA5 /* Pods-CFCamer-CFCamerUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3X65YXD245;
