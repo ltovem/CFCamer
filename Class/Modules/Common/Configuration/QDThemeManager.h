@@ -17,7 +17,7 @@
 
 @interface UIColor (QDTheme)
 
-@property(class, nonatomic, strong, readonly) UIColor *qd_backgroundColor;
+@property(class, nonatomic, strong, readonly) UIColor * _Nullable qd_backgroundColor;
 @property(class, nonatomic, strong, readonly) UIColor *qd_backgroundColorLighten;
 @property(class, nonatomic, strong, readonly) UIColor *qd_backgroundColorHighlighted;
 @property(class, nonatomic, strong, readonly) UIColor *qd_tintColor;

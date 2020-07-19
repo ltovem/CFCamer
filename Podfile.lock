@@ -1,21 +1,24 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - HappyDNS (0.3.17)
   - Masonry (1.1.0)
-  - Qiniu (7.3.5)
+  - MJExtension (3.2.2)
+  - Qiniu (7.4.2):
+    - HappyDNS (~> 0.3.17)
   - QMUIKit (4.1.3):
     - QMUIKit/QMUIComponents (= 4.1.3)
     - QMUIKit/QMUICore (= 4.1.3)
@@ -324,26 +327,49 @@ PODS:
     - QMUIKit/QMUICore
     - QMUIKit/QMUILog
   - QMUIKit/QMUIWeakObjectContainer (4.1.3)
+  - TZImagePickerController (3.4.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - AFNetworking (~> 4.0)
+  - AFNetworking (~> 3.0)
   - Masonry
+  - MJExtension
   - Qiniu (~> 7.3)
   - QMUIKit
+  - TZImagePickerController
+  - YYKit (from `https://gitee.com/mltove/YYKit.git`)
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - AFNetworking
+    - HappyDNS
     - Masonry
+    - MJExtension
     - Qiniu
     - QMUIKit
+    - TZImagePickerController
+
+EXTERNAL SOURCES:
+  YYKit:
+    :git: https://gitee.com/mltove/YYKit.git
+
+CHECKOUT OPTIONS:
+  YYKit:
+    :commit: 4e1bd1cfcdb3331244b219cbd37cc9b1ccb62b7a
+    :git: https://gitee.com/mltove/YYKit.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  HappyDNS: 848ef73e24f2b0e2752064223ce2dc0dd88900ea
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Qiniu: 9d20cbf08a3bcf9d01869626f3c2a23a1b842f65
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  Qiniu: 0e2887592ffb0f23f86b920470d2301933d51f11
   QMUIKit: 1063a99f90aedd6e2dd65026ce0df46e6785e67b
+  TZImagePickerController: 9e3b0cd989e2a8bcb9e65eb9b68b8d4f9f2ce998
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a636483d55eeb609832673212984a5544b70d285
+PODFILE CHECKSUM: 9fcab7339b5d73def3499921775c75a8fc1bee9b
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

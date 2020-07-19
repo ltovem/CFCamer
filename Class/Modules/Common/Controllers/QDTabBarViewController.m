@@ -14,4 +14,9 @@
 
 @implementation QDTabBarViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+}
+
 @end

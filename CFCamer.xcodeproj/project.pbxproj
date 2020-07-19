@@ -10,6 +10,10 @@
 		09F61F7C86F7E7BA88A09B49 /* Pods_CFCamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7AB98909DDD7EBB97AD94E /* Pods_CFCamer.framework */; };
 		13428F74C528D06268FA790C /* Pods_CFCamer_CFCamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */; };
 		8C346F7D184074EFF87CEF03 /* Pods_CFCamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */; };
+		9B78DF1E24C446F000838F91 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1624C446F000838F91 /* HTTPClient.m */; };
+		9B78DF2024C446F000838F91 /* QXHTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1C24C446F000838F91 /* QXHTTPService.m */; };
+		9B78DF2924C4575300838F91 /* NSString+HG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF2724C4575300838F91 /* NSString+HG.m */; };
+		9B7CEF3624C47FB600BC57A4 /* LTQiNiuMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */; };
 		9BE5EACE24B5B08300828161 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EACD24B5B08300828161 /* AppDelegate.m */; };
 		9BE5EAD424B5B08300828161 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD324B5B08300828161 /* ViewController.m */; };
 		9BE5EAD724B5B08300828161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD524B5B08300828161 /* Main.storyboard */; };
@@ -137,6 +141,9 @@
 		9BE5ED9024B5C17000828161 /* QDConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED3124B5C17000828161 /* QDConsoleViewController.m */; };
 		9BE5ED9124B5C17000828161 /* QDCellSizeKeyCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED3224B5C17000828161 /* QDCellSizeKeyCacheViewController.m */; };
 		9BE5ED9824B5C4B800828161 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5ED9624B5C4B700828161 /* LaunchScreen.xib */; };
+		9BE5ED9B24B5E21D00828161 /* LTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED9A24B5E21D00828161 /* LTHomeViewController.m */; };
+		9BE5ED9E24B5E2CE00828161 /* LTAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED9D24B5E2CE00828161 /* LTAlbumViewController.m */; };
+		9BE5EDA124B5EA6100828161 /* LTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +170,21 @@
 		64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamerTests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamerTests/Pods-CFCamerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamer_CFCamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B78DF1624C446F000838F91 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		9B78DF1724C446F000838F91 /* QXDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXDownloader.m; sourceTree = "<group>"; };
+		9B78DF1824C446F000838F91 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		9B78DF1A24C446F000838F91 /* QXHTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXHTTPService.h; sourceTree = "<group>"; };
+		9B78DF1B24C446F000838F91 /* HTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPService.h; sourceTree = "<group>"; };
+		9B78DF1C24C446F000838F91 /* QXHTTPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXHTTPService.m; sourceTree = "<group>"; };
+		9B78DF1D24C446F000838F91 /* QXDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXDownloader.h; sourceTree = "<group>"; };
+		9B78DF2224C4474E00838F91 /* QXStaticMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXStaticMacro.h; sourceTree = "<group>"; };
+		9B78DF2324C4474E00838F91 /* HTTPConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConfiguration.h; sourceTree = "<group>"; };
+		9B78DF2424C4474E00838F91 /* QXGlobalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QXGlobalMacro.h; sourceTree = "<group>"; };
+		9B78DF2524C4474E00838F91 /* LTIMConfigDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTIMConfigDefine.h; sourceTree = "<group>"; };
+		9B78DF2724C4575300838F91 /* NSString+HG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HG.m"; sourceTree = "<group>"; };
+		9B78DF2824C4575300838F91 /* NSString+HG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HG.h"; sourceTree = "<group>"; };
+		9B7CEF3424C47FB600BC57A4 /* LTQiNiuMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTQiNiuMethod.h; sourceTree = "<group>"; };
+		9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTQiNiuMethod.m; sourceTree = "<group>"; };
 		9BE5EAC924B5B08300828161 /* CFCamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFCamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE5EACC24B5B08300828161 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BE5EACD24B5B08300828161 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -410,6 +432,12 @@
 		9BE5ED3224B5C17000828161 /* QDCellSizeKeyCacheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCellSizeKeyCacheViewController.m; sourceTree = "<group>"; };
 		9BE5ED3324B5C17000828161 /* QDSingleImagePickerPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDSingleImagePickerPreviewViewController.h; sourceTree = "<group>"; };
 		9BE5ED9724B5C4B700828161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9BE5ED9924B5E21D00828161 /* LTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTHomeViewController.h; sourceTree = "<group>"; };
+		9BE5ED9A24B5E21D00828161 /* LTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTHomeViewController.m; sourceTree = "<group>"; };
+		9BE5ED9C24B5E2CE00828161 /* LTAlbumViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTAlbumViewController.h; sourceTree = "<group>"; };
+		9BE5ED9D24B5E2CE00828161 /* LTAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTAlbumViewController.m; sourceTree = "<group>"; };
+		9BE5ED9F24B5EA6100828161 /* LTCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTCameraViewController.h; sourceTree = "<group>"; };
+		9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTCameraViewController.m; sourceTree = "<group>"; };
 		AF0B2F11FA1273967CEB118C /* Pods-CFCamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer/Pods-CFCamer.debug.xcconfig"; sourceTree = "<group>"; };
 		C69175AE71CE290EF5BE4219 /* Pods-CFCamer-CFCamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF40811524970F9F70FD0CA5 /* Pods-CFCamer-CFCamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.release.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -464,6 +492,65 @@
 				69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B78DF1524C446F000838F91 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B78DF1824C446F000838F91 /* HTTPClient.h */,
+				9B78DF1624C446F000838F91 /* HTTPClient.m */,
+				9B78DF1924C446F000838F91 /* service */,
+				9B78DF1D24C446F000838F91 /* QXDownloader.h */,
+				9B78DF1724C446F000838F91 /* QXDownloader.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9B78DF1924C446F000838F91 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				9B78DF1B24C446F000838F91 /* HTTPService.h */,
+				9B78DF1A24C446F000838F91 /* QXHTTPService.h */,
+				9B78DF1C24C446F000838F91 /* QXHTTPService.m */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		9B78DF2124C4474E00838F91 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				9B78DF2224C4474E00838F91 /* QXStaticMacro.h */,
+				9B78DF2324C4474E00838F91 /* HTTPConfiguration.h */,
+				9B78DF2424C4474E00838F91 /* QXGlobalMacro.h */,
+				9B78DF2524C4474E00838F91 /* LTIMConfigDefine.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		9B78DF2624C4575300838F91 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9B78DF2724C4575300838F91 /* NSString+HG.m */,
+				9B78DF2824C4575300838F91 /* NSString+HG.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9B7CEF3224C47E5300BC57A4 /* Common  */ = {
+			isa = PBXGroup;
+			children = (
+				9B7CEF3324C47E7500BC57A4 /* Methods  */,
+			);
+			path = "Common ";
+			sourceTree = "<group>";
+		};
+		9B7CEF3324C47E7500BC57A4 /* Methods  */ = {
+			isa = PBXGroup;
+			children = (
+				9B7CEF3424C47FB600BC57A4 /* LTQiNiuMethod.h */,
+				9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */,
+			);
+			path = "Methods ";
 			sourceTree = "<group>";
 		};
 		9BE5EAC024B5B08300828161 = {
@@ -528,6 +615,10 @@
 		9BE5EB0124B5B8DF00828161 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				9B7CEF3224C47E5300BC57A4 /* Common  */,
+				9B78DF2624C4575300838F91 /* Category */,
+				9B78DF2124C4474E00838F91 /* Macro */,
+				9B78DF1524C446F000838F91 /* Network */,
 				9BE5EC5E24B5BD4300828161 /* Resources */,
 				9BE5EB0824B5BD3800828161 /* Modules */,
 				9BE5EB0224B5B8DF00828161 /* Home */,
@@ -542,6 +633,8 @@
 		9BE5EB0224B5B8DF00828161 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9BE5ED9924B5E21D00828161 /* LTHomeViewController.h */,
+				9BE5ED9A24B5E21D00828161 /* LTHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -556,6 +649,8 @@
 		9BE5EB0424B5B8DF00828161 /* Album  */ = {
 			isa = PBXGroup;
 			children = (
+				9BE5ED9C24B5E2CE00828161 /* LTAlbumViewController.h */,
+				9BE5ED9D24B5E2CE00828161 /* LTAlbumViewController.m */,
 			);
 			path = "Album ";
 			sourceTree = "<group>";
@@ -570,6 +665,8 @@
 		9BE5EB0624B5B8DF00828161 /* Camera  */ = {
 			isa = PBXGroup;
 			children = (
+				9BE5ED9F24B5EA6100828161 /* LTCameraViewController.h */,
+				9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */,
 			);
 			path = "Camera ";
 			sourceTree = "<group>";
@@ -916,7 +1013,7 @@
 				9BE5EAC524B5B08300828161 /* Sources */,
 				9BE5EAC624B5B08300828161 /* Frameworks */,
 				9BE5EAC724B5B08300828161 /* Resources */,
-				BE30737AE9317E19459986DA /* [CP] Embed Pods Frameworks */,
+				CFA194B5A788E8210068ACBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -954,7 +1051,7 @@
 				9BE5EAEB24B5B08600828161 /* Sources */,
 				9BE5EAEC24B5B08600828161 /* Frameworks */,
 				9BE5EAED24B5B08600828161 /* Resources */,
-				3ABC81CF176748DECC983BD6 /* [CP] Embed Pods Frameworks */,
+				5FC5E4A35AAA1485241C5B7B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -972,6 +1069,7 @@
 		9BE5EAC124B5B08300828161 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LT;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = LTOVE;
 				TargetAttributes = {
@@ -1067,7 +1165,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3ABC81CF176748DECC983BD6 /* [CP] Embed Pods Frameworks */ = {
+		5FC5E4A35AAA1485241C5B7B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1128,7 +1226,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE30737AE9317E19459986DA /* [CP] Embed Pods Frameworks */ = {
+		CFA194B5A788E8210068ACBC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1179,6 +1277,7 @@
 				9BE5ED8A24B5C17000828161 /* QDModalPresentationViewController.m in Sources */,
 				9BE5ED4724B5C17000828161 /* QDAlertController.m in Sources */,
 				9BE5ED4F24B5C17000828161 /* QDNavigationBarMaxYViewController.m in Sources */,
+				9BE5EDA124B5EA6100828161 /* LTCameraViewController.m in Sources */,
 				9BE5ED7024B5C17000828161 /* QDMoreOperationViewController.m in Sources */,
 				9BE5EBF024B5BD3900828161 /* QMUIConfigurationTemplateDark.m in Sources */,
 				9BE5ED8424B5C17000828161 /* QDSaveVideoToSpecifiedAlbumViewController.m in Sources */,
@@ -1192,6 +1291,7 @@
 				9BE5ED5124B5C17000828161 /* QDUIViewDebugViewController.m in Sources */,
 				9BE5EBF624B5BD3900828161 /* QDUIHelper.m in Sources */,
 				9BE5ED7824B5C17000828161 /* QDSingleImagePickerPreviewViewController.m in Sources */,
+				9B78DF2924C4575300838F91 /* NSString+HG.m in Sources */,
 				9BE5ED5A24B5C17000828161 /* QDLargeTitlesViewController.m in Sources */,
 				9BE5ED4024B5C17000828161 /* QDTableViewCellInsetsViewController.m in Sources */,
 				9BE5ED4A24B5C17000828161 /* QDNavigationTransitionViewController.m in Sources */,
@@ -1200,6 +1300,7 @@
 				9BE5ED5D24B5C17000828161 /* QDRippleAnimationViewController.m in Sources */,
 				9BE5EBF324B5BD3900828161 /* QMUIConfigurationTemplateGrass.m in Sources */,
 				9BE5ED3E24B5C17000828161 /* QDTableViewHeaderFooterViewController.m in Sources */,
+				9B78DF2024C446F000838F91 /* QXHTTPService.m in Sources */,
 				9BE5ED7D24B5C17000828161 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				9BE5EBFF24B5BD3900828161 /* QDCommonTableViewController.m in Sources */,
 				9BE5ED7F24B5C17000828161 /* QDCustomToastContentView.m in Sources */,
@@ -1222,6 +1323,7 @@
 				9BE5ED6624B5C17000828161 /* QDAAViewController.m in Sources */,
 				9BE5ED6E24B5C17000828161 /* QDToastListViewController.m in Sources */,
 				9BE5ED8724B5C17000828161 /* QDNavigationTitleViewController.m in Sources */,
+				9B7CEF3624C47FB600BC57A4 /* LTQiNiuMethod.m in Sources */,
 				9BE5ED5024B5C17000828161 /* QDTableViewController.m in Sources */,
 				9BE5EBFD24B5BD3900828161 /* QDCommonListViewController.m in Sources */,
 				9BE5ED6524B5C17000828161 /* QDAboutViewController.m in Sources */,
@@ -1242,6 +1344,7 @@
 				9BE5ED8524B5C17000828161 /* QDCellKeyCacheViewController.m in Sources */,
 				9BE5ED7924B5C17000828161 /* QDSaveImageToSpecifiedAlbumViewController.m in Sources */,
 				9BE5EBFA24B5BD3900828161 /* QDCommonViewController.m in Sources */,
+				9BE5ED9E24B5E2CE00828161 /* LTAlbumViewController.m in Sources */,
 				9BE5EBF524B5BD3900828161 /* QMUIConfigurationTemplate.m in Sources */,
 				9BE5ED6324B5C17000828161 /* QDLabViewController.m in Sources */,
 				9BE5ED8924B5C17000828161 /* QDCollectionDemoViewController.m in Sources */,
@@ -1251,12 +1354,14 @@
 				9BE5EBF724B5BD3900828161 /* UIImageEffects.m in Sources */,
 				9BE5ED8824B5C17000828161 /* QDComponentsViewController.m in Sources */,
 				9BE5ED7324B5C17000828161 /* QDCollectionListViewController.m in Sources */,
+				9B78DF1E24C446F000838F91 /* HTTPClient.m in Sources */,
 				9BE5ED4124B5C17000828161 /* QDObjectMethodsListViewController.m in Sources */,
 				9BE5ED4224B5C17000828161 /* QDFillButtonViewController.m in Sources */,
 				9BE5ED5624B5C17000828161 /* QDInterceptBackButtonEventViewController.m in Sources */,
 				9BE5ED5424B5C17000828161 /* QDCAAnimationViewController.m in Sources */,
 				9BE5ED3824B5C17000828161 /* QDGhostButtonViewController.m in Sources */,
 				9BE5ED6224B5C17000828161 /* QDAllSystemFontsViewController.m in Sources */,
+				9BE5ED9B24B5E21D00828161 /* LTHomeViewController.m in Sources */,
 				9BE5ED5524B5C17000828161 /* QDNavigationButtonViewController.m in Sources */,
 				9BE5ED8124B5C17000828161 /* QDMarqueeLabelViewController.m in Sources */,
 				9BE5EBF824B5BD3900828161 /* QDCommonUI.m in Sources */,
@@ -1377,7 +1482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1429,7 +1534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

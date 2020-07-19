@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
+platform :ios, '9.0'
 target 'CFCamer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -9,7 +9,12 @@ target 'CFCamer' do
   pod 'QMUIKit'
   pod "Qiniu", "~> 7.3"
   pod 'Masonry'
-  pod 'AFNetworking', '~> 4.0'
+  pod 'AFNetworking', '~> 3.0'
+  pod 'YYKit', :git => 'https://gitee.com/mltove/YYKit.git'
+  pod 'MJExtension'
+  pod 'TZImagePickerController'
+
+#  pod 'YYCache'
   # Pods for CFCamer
 
   target 'CFCamerTests' do

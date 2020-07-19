@@ -25,6 +25,10 @@
 #import "QMUIConfigurationTemplatePinkRose.h"
 #import "QMUIConfigurationTemplateDark.h"
 
+
+#import "LTHomeViewController.h"
+#import "LTAlbumViewController.h"
+
 #ifdef IOS13_SDK_ALLOWED
 //#define UIWindowScene_Enabled
 #endif
@@ -118,24 +122,25 @@
     QDTabBarViewController *tabBarViewController = [[QDTabBarViewController alloc] init];
     
     // QMUIKit
-    QDUIKitViewController *uikitViewController = [[QDUIKitViewController alloc] init];
+    LTHomeViewController *uikitViewController = [[LTHomeViewController alloc] init];
     uikitViewController.hidesBottomBarWhenPushed = NO;
+//    uikitViewController.hid
     QDNavigationController *uikitNavController = [[QDNavigationController alloc] initWithRootViewController:uikitViewController];
-    uikitNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"QMUIKit" image:UIImageMake(@"icon_tabbar_uikit") selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
-    AddAccessibilityHint(uikitNavController.tabBarItem, @"展示一系列对系统原生控件的拓展的能力");
+    uikitNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"xxxxx" image:UIImageMake(@"icon_tabbar_uikit") selectedImage:UIImageMake(@"icon_tabbar_uikit_selected") tag:0];
+//    AddAccessibilityHint(uikitNavController.tabBarItem, @"展示一系列对系统原生控件的拓展的能力");
     
     // UIComponents
-    QDComponentsViewController *componentViewController = [[QDComponentsViewController alloc] init];
+    LTAlbumViewController *componentViewController = [[LTAlbumViewController alloc] init];
     componentViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *componentNavController = [[QDNavigationController alloc] initWithRootViewController:componentViewController];
-    componentNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"Components" image:UIImageMake(@"icon_tabbar_component") selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
-    AddAccessibilityHint(componentNavController.tabBarItem, @"展示 QMUI 自己的组件库");
+    componentNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"田高伟" image:UIImageMake(@"icon_tabbar_component") selectedImage:UIImageMake(@"icon_tabbar_component_selected") tag:1];
+//    AddAccessibilityHint(componentNavController.tabBarItem, @"展示 QMUI 自己的组件库");
     
     // Lab
     QDLabViewController *labViewController = [[QDLabViewController alloc] init];
     labViewController.hidesBottomBarWhenPushed = NO;
     QDNavigationController *labNavController = [[QDNavigationController alloc] initWithRootViewController:labViewController];
-    labNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"Lab" image:UIImageMake(@"icon_tabbar_lab") selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
+    labNavController.tabBarItem = [QDUIHelper tabBarItemWithTitle:@"战三" image:UIImageMake(@"icon_tabbar_lab") selectedImage:UIImageMake(@"icon_tabbar_lab_selected") tag:2];
     AddAccessibilityHint(labNavController.tabBarItem, @"集合一些非正式但可能很有用的小功能");
     
     // window root controller
@@ -172,7 +177,7 @@
         }
     }];
     
-    [UIView animateWithDuration:.15 delay:0.9 options:QMUIViewAnimationOptionsCurveOut animations:^{
+    [UIView animateWithDuration:.15 delay:3.9 options:QMUIViewAnimationOptionsCurveOut animations:^{
         [launchScreenView layoutIfNeeded];
         logoImageView.alpha = 0.0;
         copyrightLabel.alpha = 0;
