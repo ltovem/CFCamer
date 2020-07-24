@@ -13,6 +13,7 @@ target 'CFCamer' do
   pod 'YYKit', :git => 'https://gitee.com/mltove/YYKit.git'
   pod 'MJExtension'
   pod 'TZImagePickerController'
+  pod 'SDWebImage',:git => 'https://gitee.com/mltove/SDWebImage.git'
 
 #  pod 'YYCache'
   # Pods for CFCamer

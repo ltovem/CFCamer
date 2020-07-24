@@ -15,6 +15,8 @@
 		9B78DF2924C4575300838F91 /* NSString+HG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF2724C4575300838F91 /* NSString+HG.m */; };
 		9B7CEF3624C47FB600BC57A4 /* LTQiNiuMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */; };
 		9B7CEF3924C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEF3724C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.m */; };
+		9B92149524C98D8200389342 /* QXDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1724C446F000838F91 /* QXDownloader.m */; };
+		9B92149824C98EA200389342 /* NSFileManager+DBCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B92149624C98EA200389342 /* NSFileManager+DBCategories.m */; };
 		9BE5EACE24B5B08300828161 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EACD24B5B08300828161 /* AppDelegate.m */; };
 		9BE5EAD424B5B08300828161 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD324B5B08300828161 /* ViewController.m */; };
 		9BE5EAD724B5B08300828161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE5EAD524B5B08300828161 /* Main.storyboard */; };
@@ -188,6 +190,8 @@
 		9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTQiNiuMethod.m; sourceTree = "<group>"; };
 		9B7CEF3724C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Luban_iOS_Extension_h.m"; sourceTree = "<group>"; };
 		9B7CEF3824C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Luban_iOS_Extension_h.h"; sourceTree = "<group>"; };
+		9B92149624C98EA200389342 /* NSFileManager+DBCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DBCategories.m"; sourceTree = "<group>"; };
+		9B92149724C98EA200389342 /* NSFileManager+DBCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DBCategories.h"; sourceTree = "<group>"; };
 		9BE5EAC924B5B08300828161 /* CFCamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFCamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE5EACC24B5B08300828161 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BE5EACD24B5B08300828161 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -535,6 +539,8 @@
 			children = (
 				9B7CEF3824C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.h */,
 				9B7CEF3724C4AA3200BC57A4 /* UIImage+Luban_iOS_Extension_h.m */,
+				9B92149724C98EA200389342 /* NSFileManager+DBCategories.h */,
+				9B92149624C98EA200389342 /* NSFileManager+DBCategories.m */,
 				9B78DF2724C4575300838F91 /* NSString+HG.m */,
 				9B78DF2824C4575300838F91 /* NSString+HG.h */,
 			);
@@ -1259,6 +1265,7 @@
 				9BE5ED4524B5C17000828161 /* QDSliderViewController.m in Sources */,
 				9BE5ED3424B5C17000828161 /* QDImageViewViewController.m in Sources */,
 				9BE5ED8C24B5C17000828161 /* QDCellHeightCacheViewController.m in Sources */,
+				9B92149824C98EA200389342 /* NSFileManager+DBCategories.m in Sources */,
 				9BE5ED5324B5C17000828161 /* QDFoldCollectionViewLayout.m in Sources */,
 				9BE5EBF924B5BD3900828161 /* QDCommonGroupListViewController.m in Sources */,
 				9BE5EBF124B5BD3900828161 /* QDThemeManager.m in Sources */,
@@ -1324,6 +1331,7 @@
 				9BE5ED3D24B5C17000828161 /* QDLabelViewController.m in Sources */,
 				9BE5ED4E24B5C17000828161 /* QDUIViewLayoutViewController.m in Sources */,
 				9BE5EADF24B5B08600828161 /* main.m in Sources */,
+				9B92149524C98D8200389342 /* QXDownloader.m in Sources */,
 				9BE5ED6424B5C17000828161 /* QDFontPointSizeAndLineHeightViewController.m in Sources */,
 				9BE5ED3924B5C17000828161 /* QDSearchViewController.m in Sources */,
 				9BE5ED6624B5C17000828161 /* QDAAViewController.m in Sources */,
@@ -1488,7 +1496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1540,7 +1548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

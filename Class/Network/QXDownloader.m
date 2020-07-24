@@ -8,6 +8,7 @@
 
 #import "QXDownloader.h"
 #import <AFNetworking/AFNetworking.h>
+#import "NSFileManager+DBCategories.h"
 
 NSString *const HGDownloadCompletedUnitCount = @"HGDownloadCompletedUnitCount";
 NSString *const HGDownloadTotalUnitCount = @"HGDownloadTotalUnitCount";
@@ -56,7 +57,7 @@ NSString *const HGDownloadTotalUnitCount = @"HGDownloadTotalUnitCount";
     __weak typeof(self) weakSelf = self;
     
     NSString *key = [self cacheKeyForURL:url];
-    NSString *path = [NSFileManager pathFile:QXCurrentUser.shared.account];
+    NSString *path = [NSFileManager pathFile:@"tgw"];
     path = [path stringByAppendingPathComponent:url.lastPathComponent];
     NSURL *target = [NSURL fileURLWithPath:path];
     
@@ -200,7 +201,7 @@ NSString *const HGDownloadTotalUnitCount = @"HGDownloadTotalUnitCount";
 
 - (NSString *)cacheKeyForURL:(NSURL *)url {
     if (!url) { return nil; }
-    return [url.absoluteString hgMD5HexLower];
+    return [url.absoluteString md5String];
 }
 
 

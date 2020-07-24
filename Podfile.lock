@@ -327,6 +327,9 @@ PODS:
     - QMUIKit/QMUICore
     - QMUIKit/QMUILog
   - QMUIKit/QMUIWeakObjectContainer (4.1.3)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - TZImagePickerController (3.4.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -338,6 +341,7 @@ DEPENDENCIES:
   - MJExtension
   - Qiniu (~> 7.3)
   - QMUIKit
+  - SDWebImage (from `https://gitee.com/mltove/SDWebImage.git`)
   - TZImagePickerController
   - YYKit (from `https://gitee.com/mltove/YYKit.git`)
 
@@ -352,10 +356,15 @@ SPEC REPOS:
     - TZImagePickerController
 
 EXTERNAL SOURCES:
+  SDWebImage:
+    :git: https://gitee.com/mltove/SDWebImage.git
   YYKit:
     :git: https://gitee.com/mltove/YYKit.git
 
 CHECKOUT OPTIONS:
+  SDWebImage:
+    :commit: 40023d566878027bc5780121e3435396785ffb96
+    :git: https://gitee.com/mltove/SDWebImage.git
   YYKit:
     :commit: 4e1bd1cfcdb3331244b219cbd37cc9b1ccb62b7a
     :git: https://gitee.com/mltove/YYKit.git
@@ -367,9 +376,10 @@ SPEC CHECKSUMS:
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   Qiniu: 0e2887592ffb0f23f86b920470d2301933d51f11
   QMUIKit: 1063a99f90aedd6e2dd65026ce0df46e6785e67b
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   TZImagePickerController: 9e3b0cd989e2a8bcb9e65eb9b68b8d4f9f2ce998
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9fcab7339b5d73def3499921775c75a8fc1bee9b
+PODFILE CHECKSUM: a8b148efe3fbf2ab9725484a448ab0bf24160fac
 
 COCOAPODS: 1.9.3

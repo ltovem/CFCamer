@@ -35,6 +35,6 @@
 //#import "Q"
 #import <MJExtension/MJExtension.h>
 #import <YYKit/YYKit.h>
-
+#import <SDWebImage/SDWebImage.h>
 
 #endif

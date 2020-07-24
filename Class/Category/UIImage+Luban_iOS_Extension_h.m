@@ -90,6 +90,20 @@ static char customImageName;
     }
     return [self lubanCompressImage:image withMask:nil];
 }
++ (UIImage *)coverImageWithImage:(UIImage *)image color:(UIColor *)color{
+    CGSize size = image.size;
+    CGRect rect=CGRectMake(0.0f, 0.0f, size.width,size.height);
+    UIGraphicsBeginImageContext(size);//创建图片
+    CGContextRef context = UIGraphicsGetCurrentContext();//创建图片上下文
+    CGContextSetFillColorWithColor(context, [color CGColor]);//设置当前填充颜色的图形上下文
+    CGContextFillRect(context, rect);//填充颜色
+    
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
 
 + (NSData *)compressWithImage:(UIImage *)image thumbW:(int)width thumbH:(int)height size:(double)size withMask:(NSString *)maskName {
     

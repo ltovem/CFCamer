@@ -13,5 +13,6 @@
 + (NSData *)lubanCompressImage:(UIImage *)image;
 + (NSData *)lubanCompressImage:(UIImage *)image withMask:(NSString *)maskName;
 + (NSData *)lubanCompressImage:(UIImage *)image withCustomImage:(NSString *)imageName;
-
++ (UIImage *)coverImageWithImage:(UIImage *)image
+                           color:(UIColor *)color;
 @end
