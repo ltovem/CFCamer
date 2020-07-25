@@ -19,6 +19,7 @@
 @implementation QMUITips (LTShow)
 
 + (void)showCustomVieWithTitle:(NSString *)title info:(NSString *)info preview:(nonnull UIView *)preview{
+    [QMUITips hideAllTips];
     [QMUITips showCustomViewTiosWithPreview:preview title:title imfoStr:info customImage:UIImageMake(@"image0")];
 }
 

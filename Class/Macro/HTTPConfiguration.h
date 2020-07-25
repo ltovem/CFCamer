@@ -9,11 +9,11 @@
 #ifndef HGHTTPConfiguration_h
 #define HGHTTPConfiguration_h
 
-#define kHTTPEnvironmentISTest 1   //0:正式服务器，1:测试服务器，2:本地
+#define kHTTPEnvironmentISTest 0   //0:正式服务器，1:测试服务器，2:本地
 
 /********************下面是服务器接口地址********************/
 #if (0 == kHTTPEnvironmentISTest)
-#define BASE_API_URL @"https://qxmg.qdingnet.com/api/"
+#define BASE_API_URL @"http://47.104.86.157:8888/"
 #define XMPPServerDomain @"qx.qdingnet.com"
 #define XGAppId  2200320202
 #define XGAppKey @"I2Q87GVYF14F"

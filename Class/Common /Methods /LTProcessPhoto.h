@@ -29,6 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
                       failure:(void(^)(NSError *_Nullable error))failure
                       success:(void(^)(UIImage * _Nullable image,  NSError * _Nullable error))successResponse;
 
+
+/// 使用阿里云定位 裁剪图片
+/// @param imageData -
+/// @param fileName -
+/// @param failure -
+/// @param successResponse -
++ (void)getClpedImageWithImage:(NSData *)imageData
+                      fileName:(NSString *)fileName
+                       failure:(void(^)(NSError *_Nullable error))failure
+                       success:(void(^)(UIImage * _Nullable image,  NSError * _Nullable error))successResponse;
 @end
 
 NS_ASSUME_NONNULL_END

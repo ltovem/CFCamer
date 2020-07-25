@@ -99,7 +99,7 @@
     NSData *imageData = UIImageJPEGRepresentation(image, 0.3);
     //    UIImage *coverimage = [self coloredImage:image red:0 /255.0 green:123/255.0 blue:123/255.0 alpa:0.5];
     //    UIImage *coverimage = [self imageFromColor:[UIColor yellowColor] size:image.size image:image];
-    UIImage *coverimage = [UIImage coverImageWithImage:image color:[self RandomColor]];
+    
     //    self.imageView.image = [UIImage imageWithData:imageData];
     //    self.imageView.image = [coverimage qmui_imageWithTintColor:[UIColor yellowColor]];
     //    [self.imageView sizeToFit];
@@ -115,54 +115,7 @@
     
     
 //
-//        [LTQiNiuMethod uploadWithData:imageData fileName:[NSString stringWithFormat:@"%u9999--9.jpg",arc4random()] progressHandler:^(BOOL success, NSString * _Nonnull errDesc, NSString * _Nonnull key, float present) {
-//            NSLog(@"上传进度percent == %.2f", present);
-//        } complete:^(NSString * _Nonnull key, NSDictionary * _Nonnull resp) {
-//            NSLog(@"%@", resp);
-//    //        [HTTPClient.sharedInstance getQiNiuDowUrlWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-//    //            NSLog(@"%@========>>>>>>>>>====",responseData);
-//    //        }];
-//    //
-//    //        //关键点检测
-//            [HTTPClient.sharedInstance bodyPostureWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-//    //            NSLog(@"人像处理结果  ：：：%@========>>>>>>>>>====",[responseData mj_JSONString]);
-//    //            NSDictionary *dic = [responseData mj_JSONObject];？
-//    //            if ([dic writeToFile:@"/Users/ltove/Desktop/json.plist" atomically:YES]) {
-//    //                NSLog(@"json 写入成功");
-//    //            }
-//
-//                NSArray *outputs = responseData[@"data"][@"outputs"];
-//                NSArray * results = outputs.firstObject[@"results"];
-//                NSArray *bodies = results.firstObject[@"bodies"];
-//                __block CGFloat lef_x = 0;
-//                __block CGFloat lef_y = 0;
-//                __block CGFloat rig_x = 0;
-//                __block CGFloat rig_y = 0;
-//                [bodies enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//    //                NSLog(@"index= %lu %@\n",(unsigned long)idx,obj[@"label"]);
-//                    if ([obj[@"label"] isEqualToString:@"left_shoudler"]) {
-//                        NSArray *positions = obj[@"positions"];
-//                        NSDictionary *dic = positions.firstObject;
-//                        NSArray *points = dic[@"points"];
-//                        lef_x = [points[0] floatValue];
-//                        lef_y = [points[1] floatValue];
-//
-//                    }else if ([obj[@"label"] isEqualToString:@"right_shoudler"]) {
-//                        NSArray *positions = obj[@"positions"];
-//                        NSDictionary *dic = positions.firstObject;
-//                        NSArray *points = dic[@"points"];
-//                        rig_x = [points[0] floatValue];
-//                        rig_y = [points[1] floatValue];
-//
-//                    }
-//                }];
-//
-//                NSLog(@"x === %f y ===== %f",lef_x * 1100,lef_y * 1467);
-//                NSLog(@"x === %f y ===== %f",rig_x * 1100,rig_y * 1467);
-//                [self drawimageWithLeftX:lef_x l_y:lef_y r_x:rig_x r_y:rig_y];
-//            }];
-//
-//        }];
+       
     
     
     
@@ -224,26 +177,26 @@
     
 //    [self drawImageWithWidth:1795 height:1205];
 //    for (int i = 0; i < 8; i ++) {
-//        [self typeingWithPhoto:[UIImage imageNamed:@"puqiao"] photoType:i];
+//        [LTTypingPhoto typeingWithPhoto:[UIImage imageNamed:@"puqiao"] photoType:i];
 //        [NSThread sleepForTimeInterval:5];
 //    }
-//    UIImage *orginImage = [UIImage imageNamed:@"IMG_0821"];
+//    UIImage *orginImage = [UIImage imageNamed:@"puqiao"];
 //    [LTTypingPhoto typeingWithPhoto:orginImage photoType:LTPhotoTypeDriver typedImage:^(UIImage * _Nonnull typedImage) {
 //        dispatch_async(dispatch_get_main_queue(), ^{
-//            UIImage *image = [LTTypingPhoto drawWatherWithImage:typedImage watherSte:@"4567890"];
-//            NSData *data = UIImageJPEGRepresentation(image, 1);
-//            
+////            UIImage *image = [LTTypingPhoto drawWatherWithImage:typedImage watherSte:@"4567890"];
+//            NSData *data = UIImageJPEGRepresentation(typedImage, 1);
+//
 //            if ([data writeToFile:@"/Users/ltove/Desktop/123456.jpeg" atomically:YES]) {
-//                
+//
 //                NSLog(@"new image write success ");
-//                
-//                
+//
+//
 //            }else{
 //                NSLog(@"new image write failure ");
 //            }
 //            self.imageView.image = image;
 //        });
-//        
+//
 //        NSLog(@"%@nstread  @",[NSThread currentThread]);
 //    }];
 //    
@@ -252,155 +205,6 @@
     LTEditPhotoViewController *webView = [LTEditPhotoViewController new];
     [self.navigationController pushViewController:webView animated:YES];
 }
-
--(UIColor*)RandomColor {
-    
-        return   [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
-    
-}
-
-- (void)getClearImageWithData:(NSData *)data{
-    [LTQiNiuMethod uploadWithData:data fileName:[NSString stringWithFormat:@"%u9999--9.jpg",arc4random()] progressHandler:^(BOOL success, NSString * _Nonnull errDesc, NSString * _Nonnull key, float present) {
-        NSLog(@"上传进度percent == %.2f", present);
-    } complete:^(NSString * _Nonnull key, NSDictionary * _Nonnull resp) {
-        NSLog(@"%@", resp);
-        [HTTPClient.sharedInstance getQiNiuDowUrlWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-            NSLog(@"%@========>>>>>>>>>====",responseData);
-            NSString *url = responseData[@"data"][@"imageURL"];
-            SDWebImageDownloader *download = [SDWebImageDownloader sharedDownloader];
-            [download downloadImageWithURL:[url mj_url] completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
-                //                    UIImage *rhImage = [UIImage coverImageWithImage:<#(UIImage *)#> color:<#(UIColor *)#>]
-                [self coverImageWithImage:image];
-                if ([data writeToFile:@"/Users/ltove/Desktop/12345.png" atomically:YES]) {
-                    NSLog(@"clear image 写入成功");
-                }
-            }];
-        }];
-        
-        //关键点检测
-        //            [HTTPClient.sharedInstance bodyPostureWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-        //    //            NSLog(@"人像处理结果  ：：：%@========>>>>>>>>>====",[responseData mj_JSONString]);
-        //    //            NSDictionary *dic = [responseData mj_JSONObject];？
-        //    //            if ([dic writeToFile:@"/Users/ltove/Desktop/json.plist" atomically:YES]) {
-        //    //                NSLog(@"json 写入成功");
-        //    //            }
-        //
-        //                NSArray *outputs = responseData[@"data"][@"outputs"];
-        //                NSArray * results = outputs.firstObject[@"results"];
-        //                NSArray *bodies = results.firstObject[@"bodies"];
-        //                __block CGFloat lef_x = 0;
-        //                __block CGFloat lef_y = 0;
-        //                __block CGFloat rig_x = 0;
-        //                __block CGFloat rig_y = 0;
-        //                [bodies enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        //    //                NSLog(@"index= %lu %@\n",(unsigned long)idx,obj[@"label"]);
-        //                    if ([obj[@"label"] isEqualToString:@"left_shoudler"]) {
-        //                        NSArray *positions = obj[@"positions"];
-        //                        NSDictionary *dic = positions.firstObject;
-        //                        NSArray *points = dic[@"points"];
-        //                        lef_x = [points[0] floatValue];
-        //                        lef_y = [points[1] floatValue];
-        //
-        //                    }else if ([obj[@"label"] isEqualToString:@"right_shoudler"]) {
-        //                        NSArray *positions = obj[@"positions"];
-        //                        NSDictionary *dic = positions.firstObject;
-        //                        NSArray *points = dic[@"points"];
-        //                        rig_x = [points[0] floatValue];
-        //                        rig_y = [points[1] floatValue];
-        //
-        //                    }
-        //                }];
-        //
-        //                NSLog(@"x === %f y ===== %f",lef_x * 1100,lef_y * 1467);
-        //                NSLog(@"x === %f y ===== %f",rig_x * 1100,rig_y * 1467);
-        //                [self drawimageWithLeftX:lef_x l_y:lef_y r_x:rig_x r_y:rig_y];
-        //            }];
-        
-    }];
-}
-
-- (void)coverImageWithImage:(UIImage *)image{
-    UIImage *coImage = [UIImage coverImageWithImage:image color:[self RandomColor]];
-    self.imageView.image = coImage;
-    NSData *data = UIImagePNGRepresentation(coImage);
-    if ([data writeToFile:@"/Users/ltove/Desktop/123456.png" atomically:YES]) {
-        NSLog(@"cover color image save success");
-    }
-}
-
-
-
-
-
-
-- (void)drawimageWithLeftX:(CGFloat )l_x
-                       l_y:(CGFloat )l_y
-                       r_x:(CGFloat)r_x
-                       r_y:(CGFloat)r_y{
-    
-    
-    l_y = MAX(l_y, r_y);
-    r_y = l_y;
-    NSLog(@"x === %f y ===== %f",l_x * 1100,l_y * 1467);
-    NSLog(@"x === %f y ===== %f",r_x * 1100,r_y * 1467);
-    UIImage *image = [UIImage imageNamed:self.name];
-    self.imageView.image = image;
-    CGContextRef content = CGBitmapContextCreate(NULL, image.size.width, image.size.height, 8, 0, CGColorSpaceCreateDeviceRGB(), kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
-    CGContextSetStrokeColorWithColor(content, [UIColor redColor].CGColor);
-    
-    //线条的宽度
-    
-    CGContextSetLineWidth(content, 6);
-    
-    //    CGContextTranslateCTM(content, 0, image.size.height);
-    //    CGContextScaleCTM(content, 1, -1);
-    CGFloat height = fabs(l_x - r_x)  * image.size.width * 1.4;
-    CGFloat y1 = image.size.height * (1 - r_y);
-    CGFloat y2 = y1 + height;
-    if (y2 > image.size.height) {
-        
-        y1 = y1 + image.size.height - y2;
-        y2 = image.size.height;
-    }
-    NSLog(@"height %f",height);
-    CGContextDrawImage(content, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
-    
-    
-    CGImageRef clpimage = CGImageCreateWithImageInRect(image.CGImage, CGRectMake(r_x *image.size.width, l_y * image.size.height - height, fabs(l_x - r_x) * image.size.width, height));
-    //    CGContextAddLineToPoint(content, image.size.width * l_x, image.size.height * l_y);
-    CGContextMoveToPoint(content, l_x * image.size.width,y1);
-    
-    CGContextAddLineToPoint(content, image.size.width * r_x,y1);
-    CGContextAddLineToPoint(content, image.size.width * r_x,y2);
-    CGContextAddLineToPoint(content, image.size.width * l_x,y2);
-    CGContextClosePath(content);
-    CGContextStrokePath(content);
-    
-    
-    CGImageRef refimage = CGBitmapContextCreateImage(content);
-    
-    self.imageView.image = [UIImage imageWithCGImage:refimage];
-    NSData *imageData = UIImageJPEGRepresentation([UIImage imageWithCGImage:refimage], 0.3);
-    if ([imageData writeToFile:@"/Users/ltove/Desktop/1234.png" atomically:YES]) {
-        NSLog(@"写如此高");
-    }
-    NSData *clpData = UIImageJPEGRepresentation([UIImage imageWithCGImage:clpimage], 0.3);
-    [self getClearImageWithData:clpData];
-    if ([UIImagePNGRepresentation([UIImage imageWithCGImage:clpimage]) writeToFile:@"/Users/ltove/Desktop/12345.png" atomically:YES]) {
-        NSLog(@"clp 写入成功");
-        self.imageView.image = [UIImage imageWithCGImage:clpimage];
-    }else{
-        NSLog(@"clp 写入shibai");
-    }
-    
-    
-}
-
-//- (void)typeingWithPhoto:(UIImage *)photo
-//               photoType:(LTPhotoType)type
-//             contentSize:(CGSize)contentSize{
-//    CGFloat seplieWidth = 20;
-//}
 
 
 
