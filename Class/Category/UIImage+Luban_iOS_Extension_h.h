@@ -13,6 +13,11 @@
 + (NSData *)lubanCompressImage:(UIImage *)image;
 + (NSData *)lubanCompressImage:(UIImage *)image withMask:(NSString *)maskName;
 + (NSData *)lubanCompressImage:(UIImage *)image withCustomImage:(NSString *)imageName;
++ (UIImage *)lubangetCompressImage:(UIImage *)image withMask:(NSString *)maskName;
+
+/// 更换背景颜色
+/// @param image image
+/// @param color color
 + (UIImage *)coverImageWithImage:(UIImage *)image
                            color:(UIColor *)color;
 @end

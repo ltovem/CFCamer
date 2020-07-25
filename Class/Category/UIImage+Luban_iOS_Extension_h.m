@@ -17,6 +17,70 @@ static char customImageName;
 + (NSData *)lubanCompressImage:(UIImage *)image {
     return [self lubanCompressImage:image withMask:nil];
 }
++ (UIImage *)lubangetCompressImage:(UIImage *)image withMask:(NSString *)maskName {
+    
+    double size;
+    NSData *imageData = UIImageJPEGRepresentation(image, 1);
+    
+    NSLog(@"Luban-iOS image data size before compressed == %f Kb",imageData.length/1024.0);
+    
+    int fixelW = (int)image.size.width;
+    int fixelH = (int)image.size.height;
+    int thumbW = fixelW % 2  == 1 ? fixelW + 1 : fixelW;
+    int thumbH = fixelH % 2  == 1 ? fixelH + 1 : fixelH;
+    
+    double scale = ((double)fixelW/(double)fixelH);
+    
+    if (scale <= 1 && scale > 0.5625) {
+        
+        if (fixelH < 1664) {
+            if (imageData.length/1024.0 < 150) {
+                return image;
+            }
+            size = (fixelW * fixelH) / pow(1664, 2) * 150;
+            size = size < 60 ? 60 : size;
+        }
+        else if (fixelH >= 1664 && fixelH < 4990) {
+            thumbW = fixelW / 2;
+            thumbH = fixelH / 2;
+            size   = (thumbH * thumbW) / pow(2495, 2) * 300;
+            size = size < 60 ? 60 : size;
+        }
+        else if (fixelH >= 4990 && fixelH < 10240) {
+            thumbW = fixelW / 4;
+            thumbH = fixelH / 4;
+            size = (thumbW * thumbH) / pow(2560, 2) * 300;
+            size = size < 100 ? 100 : size;
+        }
+        else {
+            int multiple = fixelH / 1280 == 0 ? 1 : fixelH / 1280;
+            thumbW = fixelW / multiple;
+            thumbH = fixelH / multiple;
+            size = (thumbW * thumbH) / pow(2560, 2) * 300;
+            size = size < 100 ? 100 : size;
+        }
+    }
+    else if (scale <= 0.5625 && scale > 0.5) {
+        
+        if (fixelH < 1280 && imageData.length/1024 < 200) {
+            
+            return image;
+        }
+        int multiple = fixelH / 1280 == 0 ? 1 : fixelH / 1280;
+        thumbW = fixelW / multiple;
+        thumbH = fixelH / multiple;
+        size = (thumbW * thumbH) / (1440.0 * 2560.0) * 400;
+        size = size < 100 ? 100 : size;
+    }
+    else {
+        int multiple = (int)ceil(fixelH / (1280.0 / scale));
+        thumbW = fixelW / multiple;
+        thumbH = fixelH / multiple;
+        size = ((thumbW * thumbH) / (1280.0 * (1280 / scale))) * 500;
+        size = size < 100 ? 100 : size;
+    }
+    return [UIImage imageWithData:[self compressWithImage:image thumbW:thumbW thumbH:thumbH size:size withMask:maskName]];
+}
 + (NSData *)lubanCompressImage:(UIImage *)image withMask:(NSString *)maskName {
     
     double size;
