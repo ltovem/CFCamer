@@ -14,11 +14,11 @@
 #define photoMargin 50
 
 #import "LTEditPhotoViewController.h"
-
-#import "QDCustomToastAnimator.h"
-#import "QDCustomToastContentView.h"
-
 #import "QMUITips+LTShow.h"
+#import "LTAddListViewController.h"
+
+#import "LTProcessPhoto.h"
+#import "UIImage+Luban_iOS_Extension_h.h"
 
 @interface LTEditPhotoViewController ()
 
@@ -28,6 +28,9 @@
 
 @property (nonatomic,strong)UIButton *exportButtion;
 @property (nonatomic,strong)UIButton *nextButtion;
+
+@property (nonatomic,strong)UIColor *backColor;
+@property (nonatomic,strong)UIImage *clpedImage;
 
 @end
 
@@ -74,24 +77,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.photoImageView.image = [UIImage imageNamed:@"timg1"];
-//    [self showEmptyView];
-//    [self setUI];
+    self.backColor = [UIColor qmui_randomColor];
+    self.title = @"编辑照片";
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"aaaa");
-}
 
 - (void)initSubviews{
     [super initSubviews];
     [self setUI];
     
 }
-
-//- (void)loadView{
-//    [super loadView];
-//
-//}
 
 - (void)setUI{
     self.contentView = [UIView new];
@@ -144,11 +139,35 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma --process
+
+-(void)procressPhotoWithClpedPhoto:(NSData *)clpedPhoto{
+    NSString *name = [NSString stringWithFormat:@"%ld.jpg",random()];
+    [LTProcessPhoto getClearImageWithData:clpedPhoto fileName:name failure:^(NSError * _Nullable error) {
+        [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:@"换个姿势重新试一下" preview:self.view];
+    } success:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        if (image == nil) {
+            [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:@"换个姿势重新试一下" preview:self.view];
+        }else{
+            self.clpedImage = image;
+            [self renderImageWithColor:self.backColor];
+        }
+    }];
+}
+
+- (void)renderImageWithColor:(UIColor *)color{
+    UIImage *image = [UIImage coverImageWithImage:self.clpedImage color:color];
+    self.photoImageView.image = image;
+}
 
 #pragma -- actions
 //导出照片
 - (void)exportButtionClick:(UIButton *)btn{
     NSLog(@"export");
+    
+    [self renderImageWithColor:[UIColor qmui_randomColor]];
+//    return;
+    
     switch ([QMUIAssetsManager authorizationStatus]) {
         case QMUIAssetAuthorizationStatusNotDetermined:
             //未获授权
@@ -203,6 +222,10 @@
 //打印订单
 - (void)nextButtionClick:(UIButton *)btn{
     NSLog(@"next btn click");
+    LTAddListViewController *addvc = [LTAddListViewController new];
+    
+//    [self.navigationController pushViewController:addvc animated:YES];
+    [self procressPhotoWithClpedPhoto:UIImageJPEGRepresentation(self.photoImageView.image, 0.7)];
     
 }
 

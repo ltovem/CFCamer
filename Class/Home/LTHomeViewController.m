@@ -108,55 +108,70 @@
     //    if ([writedata writeToFile:@"/Users/ltove/Desktop/zjz.png" atomically:YES]) {
     //        NSLog(@"写入成功");
     //    }
-    //    [LTQiNiuMethod uploadWithData:imageData fileName:[NSString stringWithFormat:@"%u9999--9.jpg",arc4random()] progressHandler:^(BOOL success, NSString * _Nonnull errDesc, NSString * _Nonnull key, float present) {
-    //        NSLog(@"上传进度percent == %.2f", present);
-    //    } complete:^(NSString * _Nonnull key, NSDictionary * _Nonnull resp) {
-    //        NSLog(@"%@", resp);
-    ////        [HTTPClient.sharedInstance getQiNiuDowUrlWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-    ////            NSLog(@"%@========>>>>>>>>>====",responseData);
-    ////        }];
-    //
-    //        //关键点检测
-    //        [HTTPClient.sharedInstance bodyPostureWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
-    ////            NSLog(@"人像处理结果  ：：：%@========>>>>>>>>>====",[responseData mj_JSONString]);
-    ////            NSDictionary *dic = [responseData mj_JSONObject];？
-    ////            if ([dic writeToFile:@"/Users/ltove/Desktop/json.plist" atomically:YES]) {
-    ////                NSLog(@"json 写入成功");
-    ////            }
-    //
-    //            NSArray *outputs = responseData[@"data"][@"outputs"];
-    //            NSArray * results = outputs.firstObject[@"results"];
-    //            NSArray *bodies = results.firstObject[@"bodies"];
-    //            __block CGFloat lef_x = 0;
-    //            __block CGFloat lef_y = 0;
-    //            __block CGFloat rig_x = 0;
-    //            __block CGFloat rig_y = 0;
-    //            [bodies enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    ////                NSLog(@"index= %lu %@\n",(unsigned long)idx,obj[@"label"]);
-    //                if ([obj[@"label"] isEqualToString:@"left_shoudler"]) {
-    //                    NSArray *positions = obj[@"positions"];
-    //                    NSDictionary *dic = positions.firstObject;
-    //                    NSArray *points = dic[@"points"];
-    //                    lef_x = [points[0] floatValue];
-    //                    lef_y = [points[1] floatValue];
-    //
-    //                }else if ([obj[@"label"] isEqualToString:@"right_shoudler"]) {
-    //                    NSArray *positions = obj[@"positions"];
-    //                    NSDictionary *dic = positions.firstObject;
-    //                    NSArray *points = dic[@"points"];
-    //                    rig_x = [points[0] floatValue];
-    //                    rig_y = [points[1] floatValue];
-    //
-    //                }
-    //            }];
-    //
-    //            NSLog(@"x === %f y ===== %f",lef_x * 1100,lef_y * 1467);
-    //            NSLog(@"x === %f y ===== %f",rig_x * 1100,rig_y * 1467);
-    //            [self drawimageWithLeftX:lef_x l_y:lef_y r_x:rig_x r_y:rig_y];
-    //        }];
-    //
-    //    }];
     
+    
+    
+    
+    
+    
+//
+//        [LTQiNiuMethod uploadWithData:imageData fileName:[NSString stringWithFormat:@"%u9999--9.jpg",arc4random()] progressHandler:^(BOOL success, NSString * _Nonnull errDesc, NSString * _Nonnull key, float present) {
+//            NSLog(@"上传进度percent == %.2f", present);
+//        } complete:^(NSString * _Nonnull key, NSDictionary * _Nonnull resp) {
+//            NSLog(@"%@", resp);
+//    //        [HTTPClient.sharedInstance getQiNiuDowUrlWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
+//    //            NSLog(@"%@========>>>>>>>>>====",responseData);
+//    //        }];
+//    //
+//    //        //关键点检测
+//            [HTTPClient.sharedInstance bodyPostureWithName:resp[@"key"] complete:^(BOOL success, NSString *errDesc, id responseData) {
+//    //            NSLog(@"人像处理结果  ：：：%@========>>>>>>>>>====",[responseData mj_JSONString]);
+//    //            NSDictionary *dic = [responseData mj_JSONObject];？
+//    //            if ([dic writeToFile:@"/Users/ltove/Desktop/json.plist" atomically:YES]) {
+//    //                NSLog(@"json 写入成功");
+//    //            }
+//
+//                NSArray *outputs = responseData[@"data"][@"outputs"];
+//                NSArray * results = outputs.firstObject[@"results"];
+//                NSArray *bodies = results.firstObject[@"bodies"];
+//                __block CGFloat lef_x = 0;
+//                __block CGFloat lef_y = 0;
+//                __block CGFloat rig_x = 0;
+//                __block CGFloat rig_y = 0;
+//                [bodies enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//    //                NSLog(@"index= %lu %@\n",(unsigned long)idx,obj[@"label"]);
+//                    if ([obj[@"label"] isEqualToString:@"left_shoudler"]) {
+//                        NSArray *positions = obj[@"positions"];
+//                        NSDictionary *dic = positions.firstObject;
+//                        NSArray *points = dic[@"points"];
+//                        lef_x = [points[0] floatValue];
+//                        lef_y = [points[1] floatValue];
+//
+//                    }else if ([obj[@"label"] isEqualToString:@"right_shoudler"]) {
+//                        NSArray *positions = obj[@"positions"];
+//                        NSDictionary *dic = positions.firstObject;
+//                        NSArray *points = dic[@"points"];
+//                        rig_x = [points[0] floatValue];
+//                        rig_y = [points[1] floatValue];
+//
+//                    }
+//                }];
+//
+//                NSLog(@"x === %f y ===== %f",lef_x * 1100,lef_y * 1467);
+//                NSLog(@"x === %f y ===== %f",rig_x * 1100,rig_y * 1467);
+//                [self drawimageWithLeftX:lef_x l_y:lef_y r_x:rig_x r_y:rig_y];
+//            }];
+//
+//        }];
+    
+    
+    
+    
+    
+    
+    
+    
+//
     //    TZImagePickerController *imagevc = [[TZImagePickerController alloc]initWithMaxImagesCount:1 delegate:self];
     //
     //
