@@ -1,5 +1,5 @@
 //
-// LTEditPhotoViewController.h
+// LTSavePhotoTableViewCell.h
 // CFCamer
 //
 //  Auther:    田高伟
@@ -7,17 +7,17 @@
 //  webSite:   https://www.ltove.com
 //  GitHub:    https://github.com/LTOVEM/
 //
-// Created by LTOVE on 2020/7/25.
+// Created by LTOVE on 2020/7/26.
 // Copyright © 2020 LTOVE. All rights reserved.
 //
     
 
-#import <UIKit/UIKit.h>
-
+#import <QMUIKit/QMUIKit.h>
+@class LTSavePhotoCellModel;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LTEditPhotoViewController : QMUICommonViewController
-@property (nonatomic,strong)UIImage *photo;
+@interface LTSavePhotoTableViewCell : QMUITableViewCell
+@property (nonatomic,strong)LTSavePhotoCellModel *Model;
 @end
 
 NS_ASSUME_NONNULL_END

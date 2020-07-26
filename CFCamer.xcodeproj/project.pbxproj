@@ -11,6 +11,9 @@
 		13428F74C528D06268FA790C /* Pods_CFCamer_CFCamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */; };
 		8C346F7D184074EFF87CEF03 /* Pods_CFCamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */; };
 		9B51C5D124CD47DB00F98950 /* LTFaceBodyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51C5D024CD47DB00F98950 /* LTFaceBodyModel.m */; };
+		9B51C5D424CDAA0E00F98950 /* LTSavePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51C5D324CDAA0E00F98950 /* LTSavePhotoViewController.m */; };
+		9B51C5D824CDABFA00F98950 /* LTSavePhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51C5D724CDABFA00F98950 /* LTSavePhotoTableViewCell.m */; };
+		9B51C5DC24CDB2BA00F98950 /* LTSavePhotoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51C5DB24CDB2BA00F98950 /* LTSavePhotoCellModel.m */; };
 		9B78DF1E24C446F000838F91 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1624C446F000838F91 /* HTTPClient.m */; };
 		9B78DF2024C446F000838F91 /* QXHTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1C24C446F000838F91 /* QXHTTPService.m */; };
 		9B78DF2924C4575300838F91 /* NSString+HG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF2724C4575300838F91 /* NSString+HG.m */; };
@@ -182,6 +185,12 @@
 		848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamer_CFCamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B51C5CF24CD47DB00F98950 /* LTFaceBodyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTFaceBodyModel.h; sourceTree = "<group>"; };
 		9B51C5D024CD47DB00F98950 /* LTFaceBodyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTFaceBodyModel.m; sourceTree = "<group>"; };
+		9B51C5D224CDAA0E00F98950 /* LTSavePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTSavePhotoViewController.h; sourceTree = "<group>"; };
+		9B51C5D324CDAA0E00F98950 /* LTSavePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTSavePhotoViewController.m; sourceTree = "<group>"; };
+		9B51C5D624CDABFA00F98950 /* LTSavePhotoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTSavePhotoTableViewCell.h; sourceTree = "<group>"; };
+		9B51C5D724CDABFA00F98950 /* LTSavePhotoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTSavePhotoTableViewCell.m; sourceTree = "<group>"; };
+		9B51C5DA24CDB2BA00F98950 /* LTSavePhotoCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTSavePhotoCellModel.h; sourceTree = "<group>"; };
+		9B51C5DB24CDB2BA00F98950 /* LTSavePhotoCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTSavePhotoCellModel.m; sourceTree = "<group>"; };
 		9B78DF1624C446F000838F91 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		9B78DF1724C446F000838F91 /* QXDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXDownloader.m; sourceTree = "<group>"; };
 		9B78DF1824C446F000838F91 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
@@ -531,6 +540,24 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9B51C5D524CDABC200F98950 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B51C5D624CDABFA00F98950 /* LTSavePhotoTableViewCell.h */,
+				9B51C5D724CDABFA00F98950 /* LTSavePhotoTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9B51C5D924CDB2A000F98950 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B51C5DA24CDB2BA00F98950 /* LTSavePhotoCellModel.h */,
+				9B51C5DB24CDB2BA00F98950 /* LTSavePhotoCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9B78DF1524C446F000838F91 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,10 +752,14 @@
 		9BE5EB0624B5B8DF00828161 /* Camera  */ = {
 			isa = PBXGroup;
 			children = (
+				9B51C5D924CDB2A000F98950 /* Model */,
+				9B51C5D524CDABC200F98950 /* View */,
 				9BE5ED9F24B5EA6100828161 /* LTCameraViewController.h */,
 				9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */,
 				9B8DDD6024CBDF10004D4E08 /* LTEditPhotoViewController.h */,
 				9B8DDD6124CBDF10004D4E08 /* LTEditPhotoViewController.m */,
+				9B51C5D224CDAA0E00F98950 /* LTSavePhotoViewController.h */,
+				9B51C5D324CDAA0E00F98950 /* LTSavePhotoViewController.m */,
 			);
 			path = "Camera ";
 			sourceTree = "<group>";
@@ -1315,6 +1346,7 @@
 				9BE5ED6924B5C17000828161 /* QDThemeViewController.m in Sources */,
 				9BE5ED4524B5C17000828161 /* QDSliderViewController.m in Sources */,
 				9BE5ED3424B5C17000828161 /* QDImageViewViewController.m in Sources */,
+				9B51C5D424CDAA0E00F98950 /* LTSavePhotoViewController.m in Sources */,
 				9BE5ED8C24B5C17000828161 /* QDCellHeightCacheViewController.m in Sources */,
 				9B92149824C98EA200389342 /* NSFileManager+DBCategories.m in Sources */,
 				9BE5ED5324B5C17000828161 /* QDFoldCollectionViewLayout.m in Sources */,
@@ -1328,12 +1360,14 @@
 				9BE5ED8624B5C17000828161 /* QDImagePreviewViewController2.m in Sources */,
 				9BE5ED3624B5C17000828161 /* QDColorViewController.m in Sources */,
 				9BE5ED5F24B5C17000828161 /* QDCAShapeLoadingViewController.m in Sources */,
+				9B51C5D824CDABFA00F98950 /* LTSavePhotoTableViewCell.m in Sources */,
 				9BE5ED7624B5C17000828161 /* QDGridViewController.m in Sources */,
 				9BE5ED4324B5C17000828161 /* QDImageViewController.m in Sources */,
 				9BE5EBF424B5BD3900828161 /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				9B8DDD6524CC52AD004D4E08 /* QMUITips+LTShow.m in Sources */,
 				9BE5ED8D24B5C17000828161 /* QDDynamicHeightTableViewCell.m in Sources */,
 				9BE5EBFC24B5BD3900828161 /* QDTabBarViewController.m in Sources */,
+				9B51C5DC24CDB2BA00F98950 /* LTSavePhotoCellModel.m in Sources */,
 				9BE5ED6724B5C17000828161 /* QDPopupContainerViewController.m in Sources */,
 				9BE5ED9124B5C17000828161 /* QDCellSizeKeyCacheViewController.m in Sources */,
 				9BE5ED4D24B5C17000828161 /* QDOrientationViewController.m in Sources */,

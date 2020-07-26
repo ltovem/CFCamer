@@ -20,6 +20,7 @@
 
 #define ColorRightBar [UIColor color333333]
 #define greenRightBar [UIColor colorWithOx:@"#43ab2e"]
+#define bluecolor [UIColor colorWithRed:67 /255.0 green:142.0 / 255 blue:219.0 /255 alpha:1]
 // magin
 
 #define maginLeft 10

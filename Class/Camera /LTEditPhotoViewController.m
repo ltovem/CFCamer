@@ -16,7 +16,7 @@
 #import "LTEditPhotoViewController.h"
 #import "QMUITips+LTShow.h"
 #import "LTAddListViewController.h"
-
+#import "LTSavePhotoViewController.h"
 #import "LTProcessPhoto.h"
 #import "UIImage+Luban_iOS_Extension_h.h"
 
@@ -30,6 +30,8 @@
 @property (nonatomic,strong)UIView *toolBarView;
 @property (nonatomic,strong)UIImageView *photoImageView;
 
+@property (nonatomic,strong)UIView *colorContent;
+
 @property (nonatomic,strong)UIButton *exportButtion;
 @property (nonatomic,strong)UIButton *nextButtion;
 
@@ -40,6 +42,14 @@
 
 @implementation LTEditPhotoViewController
 
+
+- (UIColor *)backColor{
+    if (!_backColor) {
+        _backColor = [UIColor colorWithRed:67 /255.0 green:142.0 / 255 blue:219.0 /255 alpha:1];
+        
+    }
+    return _backColor;
+}
 
 - (UIView *)toolBarView{
     if (!_toolBarView) {
@@ -77,16 +87,73 @@
     }
     return _toolBarView;
 }
+
+- (UIView *)colorContent{
+    if (!_colorContent) {
+        _colorContent = [UIView new];
+        QMUIButton *White = [QDUIHelper generateDarkFilledButton];
+        QMUIButton *read = [QDUIHelper generateDarkFilledButton];
+        QMUIButton *blue = [QDUIHelper generateDarkFilledButton];
+        
+        White.layer.cornerRadius = 20;
+        read.layer.cornerRadius = 20;
+        blue.layer.cornerRadius = 20;
+        
+        White.layer.borderColor = [[UIColor grayColor] CGColor];
+        White.layer.borderWidth = 1;
+        White.tag = 0;
+        blue.tag = 1;
+        read.tag = 2;
+        
+        [White addTarget:self action:@selector(colorButtionClick:) forControlEvents:UIControlEventTouchUpInside];
+        [blue addTarget:self action:@selector(colorButtionClick:) forControlEvents:UIControlEventTouchUpInside];
+        [read addTarget:self action:@selector(colorButtionClick:) forControlEvents:UIControlEventTouchUpInside];
+        White.backgroundColor = [UIColor whiteColor];
+        read.backgroundColor = [UIColor redColor];
+        blue.backgroundColor = [UIColor colorWithRed:67 /255.0 green:142.0 / 255 blue:219.0 /255 alpha:1];
+        
+        [_colorContent addSubview:White];
+        [_colorContent addSubview:read];
+        [_colorContent addSubview:blue];
+        [White mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.equalTo(_colorContent);
+            make.center.equalTo(@[_colorContent]);
+            make.centerY.equalTo(@[blue,read]);
+            make.width.equalTo(@[blue,read,@40]);
+            make.height.equalTo(@[blue,read,@40]);
+            make.right.equalTo(blue.mas_left).offset(-10);
+            make.left.equalTo(read.mas_right).offset(10);
+        }];
+        [blue mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.width.equalTo(@40);
+//            make.height.equalTo(@40);
+        }];
+        [read mas_makeConstraints:^(MASConstraintMaker *make) {
+            //            make
+        }];
+    }
+    return _colorContent;;
+}
+
+- (void)colorButtionClick:(UIButton *)btn{
+    if (btn.tag == 0) {
+        [self renderImageWithColor:[UIColor whiteColor]];
+    }else if (btn.tag == 1) {
+        [self renderImageWithColor:[UIColor colorWithRed:67 /255.0 green:142.0 / 255 blue:219.0 /255 alpha:1]];
+    }else if (btn.tag == 2) {
+        [self renderImageWithColor:[UIColor redColor]];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.photoImageView.image = [UIImage imageNamed:@"timg1"];
-    self.backColor = [UIColor qmui_randomColor];
+//    self.backColor = [UIColor qmui_randomColor];
     self.title = @"编辑照片";
     NSString *name = [NSString stringWithFormat:@"%f.jpg",[QNUtils currentTimestamp]];
     
     
-    [self chechImageAndClpedWithPhoto:[UIImage imageNamed:@"male_5_image"] name:name];
+//    [self chechImageAndClpedWithPhoto:self.photo name:name];
 }
 
 
@@ -109,6 +176,9 @@
     _photoImageView.layer.cornerRadius = 5;
     _photoImageView.layer.masksToBounds = YES;
     [_contentView addSubview:_photoImageView];
+    
+//    self.colorContent = [UIView new];
+    [self.view addSubview:self.colorContent];
 }
 
 - (void)viewWillLayoutSubviews{
@@ -127,7 +197,7 @@
         make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
         //        make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
         make.height.equalTo(@80);
-        make.top.equalTo(self.contentView.mas_bottom);
+        make.top.equalTo(self.colorContent.mas_bottom);
     }];
     
     [_photoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,6 +205,11 @@
         make.right.equalTo(self.contentView).offset(-photoMargin);
         make.center.equalTo(self.contentView);
         make.height.equalTo(self.photoImageView.mas_width).multipliedBy(1.4);
+    }];
+    [_colorContent mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(self.contentView);
+        make.height.equalTo(@60);
+        make.top.equalTo(self.contentView.mas_bottom);
     }];
 }
 
@@ -165,10 +240,10 @@
         if (image == nil) {
             [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:@"换个姿势重新试一下" preview:self.view];
         }else{
-#warning -- todu
-//            [self procressPhotoWithClpedPhoto:image];
-            [QMUITips hideAllTips];
-            self.photoImageView.image = image;
+//#warning -- todu
+            [self procressPhotoWithClpedPhoto:image];
+//            [QMUITips hideAllTips];
+//            self.photoImageView.image = image;
         }
     }];
 }
@@ -196,10 +271,20 @@
     self.photoImageView.image = image;
 }
 
+- (void)pushToSavePhotoVc{
+    LTSavePhotoViewController *saveVc = [[LTSavePhotoViewController alloc]initWithStyle:UITableViewStylePlain];
+    saveVc.photo = [UIImage imageNamed:@"123"];
+    [self.navigationController pushViewController:saveVc animated:YES];
+}
+
 #pragma -- actions
+
 //导出照片
 - (void)exportButtionClick:(UIButton *)btn{
     NSLog(@"export");
+    [self pushToSavePhotoVc];
+    
+    return;
     
     //    [self renderImageWithColor:[UIColor qmui_randomColor]];
     switch ([QMUIAssetsManager authorizationStatus]) {
