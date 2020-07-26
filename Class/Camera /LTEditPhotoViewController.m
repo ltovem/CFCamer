@@ -86,7 +86,7 @@
     NSString *name = [NSString stringWithFormat:@"%f.jpg",[QNUtils currentTimestamp]];
     
     
-    //    [self chechImageAndClpedWithPhoto:[UIImage imageNamed:@"timg-3"] name:name];
+    [self chechImageAndClpedWithPhoto:[UIImage imageNamed:@"male_5_image"] name:name];
 }
 
 
@@ -159,13 +159,16 @@
 -(void)chechImageAndClpedWithPhoto:(UIImage *)photo name:(NSString *)name{
     [QMUITips showLoading:@"照片分析裁剪中..." inView:self.view];
     //    NSString *name = [NSString stringWithFormat:@"%ld.jpg",random()];
-    [LTProcessPhoto getClpedImageWithImage:UIImageJPEGRepresentation(photo, 0.1) fileName:name failure:^(NSError * _Nullable error) {
-        [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:@"换个姿势重新试一下" preview:self.view];
+    [LTProcessPhoto getClpedImageWithImage:photo fileName:name failure:^(NSError * _Nullable error,NSString *_Nullable msg) {
+        [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:msg preview:self.view];
     } success:^(UIImage * _Nullable image, NSError * _Nullable error) {
         if (image == nil) {
             [QMUITips showCustomVieWithTitle:@"哪里出错啦" info:@"换个姿势重新试一下" preview:self.view];
         }else{
-            [self procressPhotoWithClpedPhoto:image];
+#warning -- todu
+//            [self procressPhotoWithClpedPhoto:image];
+            [QMUITips hideAllTips];
+            self.photoImageView.image = image;
         }
     }];
 }
@@ -262,16 +265,6 @@
     [LTTypingPhoto typeingWithPhoto:self.photoImageView.image photoType:LTPhotoTypeDriver typedImage:^(UIImage * _Nonnull typedImage) {
         self.photoImageView.image = typedImage;
         
-        NSData *data = UIImageJPEGRepresentation(typedImage, 1);
-        
-        if ([data writeToFile:@"/Users/ltove/Desktop/123456.jpeg" atomically:YES]) {
-            
-            NSLog(@"new image write success ");
-            
-            
-        }else{
-            NSLog(@"new image write failure ");
-        }
     }];
     
 }

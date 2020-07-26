@@ -9,7 +9,7 @@
 #ifndef HGHTTPConfiguration_h
 #define HGHTTPConfiguration_h
 
-#define kHTTPEnvironmentISTest 0   //0:正式服务器，1:测试服务器，2:本地
+#define kHTTPEnvironmentISTest 1   //0:正式服务器，1:测试服务器，2:本地
 
 /********************下面是服务器接口地址********************/
 #if (0 == kHTTPEnvironmentISTest)

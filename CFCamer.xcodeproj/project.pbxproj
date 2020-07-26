@@ -10,6 +10,7 @@
 		09F61F7C86F7E7BA88A09B49 /* Pods_CFCamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7AB98909DDD7EBB97AD94E /* Pods_CFCamer.framework */; };
 		13428F74C528D06268FA790C /* Pods_CFCamer_CFCamerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */; };
 		8C346F7D184074EFF87CEF03 /* Pods_CFCamerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */; };
+		9B51C5D124CD47DB00F98950 /* LTFaceBodyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51C5D024CD47DB00F98950 /* LTFaceBodyModel.m */; };
 		9B78DF1E24C446F000838F91 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1624C446F000838F91 /* HTTPClient.m */; };
 		9B78DF2024C446F000838F91 /* QXHTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF1C24C446F000838F91 /* QXHTTPService.m */; };
 		9B78DF2924C4575300838F91 /* NSString+HG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B78DF2724C4575300838F91 /* NSString+HG.m */; };
@@ -179,6 +180,8 @@
 		64DA50060CAFD95EE92BB118 /* Pods-CFCamerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamerTests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamerTests/Pods-CFCamerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69E8991EA7CFD02C9164C22D /* Pods_CFCamerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848B2FCB6964251B0E934F58 /* Pods_CFCamer_CFCamerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFCamer_CFCamerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B51C5CF24CD47DB00F98950 /* LTFaceBodyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTFaceBodyModel.h; sourceTree = "<group>"; };
+		9B51C5D024CD47DB00F98950 /* LTFaceBodyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTFaceBodyModel.m; sourceTree = "<group>"; };
 		9B78DF1624C446F000838F91 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		9B78DF1724C446F000838F91 /* QXDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QXDownloader.m; sourceTree = "<group>"; };
 		9B78DF1824C446F000838F91 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
@@ -519,6 +522,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B51C5CE24CD47A800F98950 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B51C5CF24CD47DB00F98950 /* LTFaceBodyModel.h */,
+				9B51C5D024CD47DB00F98950 /* LTFaceBodyModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9B78DF1524C446F000838F91 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +591,7 @@
 		9B7CEF3324C47E7500BC57A4 /* Methods  */ = {
 			isa = PBXGroup;
 			children = (
+				9B51C5CE24CD47A800F98950 /* Model */,
 				9B7CEF3424C47FB600BC57A4 /* LTQiNiuMethod.h */,
 				9B7CEF3524C47FB600BC57A4 /* LTQiNiuMethod.m */,
 				9B8DDD5924CBB7F3004D4E08 /* LTTypingPhoto.h */,
@@ -1419,6 +1432,7 @@
 				9BE5ED5424B5C17000828161 /* QDCAAnimationViewController.m in Sources */,
 				9BE5ED3824B5C17000828161 /* QDGhostButtonViewController.m in Sources */,
 				9BE5ED6224B5C17000828161 /* QDAllSystemFontsViewController.m in Sources */,
+				9B51C5D124CD47DB00F98950 /* LTFaceBodyModel.m in Sources */,
 				9BE5ED9B24B5E21D00828161 /* LTHomeViewController.m in Sources */,
 				9BE5ED5524B5C17000828161 /* QDNavigationButtonViewController.m in Sources */,
 				9BE5ED8124B5C17000828161 /* QDMarqueeLabelViewController.m in Sources */,

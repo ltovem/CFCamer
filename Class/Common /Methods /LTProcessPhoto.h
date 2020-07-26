@@ -35,9 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param fileName -
 /// @param failure -
 /// @param successResponse -
-+ (void)getClpedImageWithImage:(NSData *)imageData
++ (void)getClpedImageWithImage:(UIImage *)imageData
                       fileName:(NSString *)fileName
-                       failure:(void(^)(NSError *_Nullable error))failure
+                       failure:(void(^)(NSError *_Nullable error,NSString *_Nullable msg))failure
                        success:(void(^)(UIImage * _Nullable image,  NSError * _Nullable error))successResponse;
 @end
 
