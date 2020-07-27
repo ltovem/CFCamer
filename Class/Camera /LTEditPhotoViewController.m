@@ -152,7 +152,7 @@
     NSString *name = [NSString stringWithFormat:@"%f.jpg",[QNUtils currentTimestamp]];
     
     
-//    [self chechImageAndClpedWithPhoto:self.photo name:name];
+    [self chechImageAndClpedWithPhoto:self.photo name:name];
 }
 
 
@@ -272,7 +272,7 @@
 
 - (void)pushToSavePhotoVc:(ExportPageType)photoType{
     LTSavePhotoViewController *saveVc = [[LTSavePhotoViewController alloc]initWithStyle:UITableViewStylePlain];
-    saveVc.photo = [UIImage imageNamed:@"123"];
+    saveVc.photo = self.clpedImage;
     saveVc.photoType = photoType;
     saveVc.photoSizeType = self.photoSizetype;
     [self.navigationController pushViewController:saveVc animated:YES];

@@ -46,6 +46,7 @@
         [self updatePrice];
     }else if (self.photoType == ExportPageTypeTypingPhoto){
         
+        [QMUITips showLoadingInView:self.view];
         
         dispatch_queue_t queue = dispatch_queue_create("com.ltove.typiing", DISPATCH_QUEUE_SERIAL);
         
@@ -53,19 +54,19 @@
         NSMutableArray *array = [NSMutableArray array];
         dispatch_group_async(group, queue, ^{
             UIImage *image = [LTTypingPhoto typeingWithPhoto:[UIImage coverImageWithImage:self.photo  color:[UIColor redColor]] photoType:self.photoSizeType];
-            LTSavePhotoCellModel *read = [LTSavePhotoCellModel initWithPhoto:image price:3.00 photoType:PhotoColorTypeRead];
+            LTSavePhotoCellModel *read = [LTSavePhotoCellModel initWithPhoto:image price:5.00 photoType:PhotoColorTypeRead];
             read.isSelect = YES;
             [array addObject:read];
         });
         dispatch_group_async(group, queue, ^{
-            LTSavePhotoCellModel *white = [LTSavePhotoCellModel initWithPhoto:[LTTypingPhoto typeingWithPhoto:[UIImage coverImageWithImage:self.photo  color:[UIColor whiteColor]] photoType:self.photoSizeType] price:3.00 photoType:PhotoColorTypeWhite];
+            LTSavePhotoCellModel *white = [LTSavePhotoCellModel initWithPhoto:[LTTypingPhoto typeingWithPhoto:[UIImage coverImageWithImage:self.photo  color:[UIColor whiteColor]] photoType:self.photoSizeType] price:5.00 photoType:PhotoColorTypeWhite];
             [array addObject:white];
             //                dispatch_semaphore_signal(single);
             NSLog(@"======122222");
             
         });
         dispatch_group_async(group, queue, ^{
-            LTSavePhotoCellModel *blue = [LTSavePhotoCellModel initWithPhoto:[LTTypingPhoto typeingWithPhoto:[UIImage coverImageWithImage:self.photo color:bluecolor] photoType:self.photoSizeType] price:3.00 photoType:PhotoColorTypeBlue];
+            LTSavePhotoCellModel *blue = [LTSavePhotoCellModel initWithPhoto:[LTTypingPhoto typeingWithPhoto:[UIImage coverImageWithImage:self.photo color:bluecolor] photoType:self.photoSizeType] price:5.00 photoType:PhotoColorTypeBlue];
             [array addObject:blue];
             NSLog(@"======333333");
             //                dispatch_semaphore_signal(single);
@@ -75,6 +76,7 @@
         dispatch_group_notify(group, dispatch_get_main_queue(), ^{
             NSLog(@"======999999");
             self.dataSource = [array copy];
+            [QMUITips hideAllTips];
             [self.tableView reloadData];
             [self updatePrice];
         });
@@ -148,11 +150,35 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = UIColor.groupTableViewBackgroundColor;
+    
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shezhi-4"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarClick)];
+//    barItem
+    self.navigationItem.rightBarButtonItem = barItem;
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem qmui_itemWithImage:UIImageMake(@"shezhi-2") target:self action:@selector(rightBarClick)];
     //    self.tableView.estimatedRowHeight = 100;
     [self initDatasource];
     
 }
-
+- (void)rightBarClick{
+//    LTPhotoType
+    NSArray *array = @[@"一寸",@"二寸",@"小一寸",@"小二寸",@"大一寸",@"大二寸",@"驾驶证",@"学生证",@"美国签证"];
+     QMUIAlertController *alertvc = [QMUIAlertController alertControllerWithTitle:@"导出照片" message:@"" preferredStyle:QMUIAlertControllerStyleActionSheet];
+    
+    for (int i = 0; i < array.count; i++) {
+        QMUIAlertAction *action = [QMUIAlertAction actionWithTitle:array[i] style:QMUIAlertActionStyleDefault handler:^(__kindof QMUIAlertController * _Nonnull aAlertController, QMUIAlertAction * _Nonnull action) {
+        //            [self pushToSavePhotoVc:ExportPageTypePhoto];
+            self.photoSizeType = i;
+            [self initDatasource];
+                }];
+        [alertvc addAction:action];
+    }
+    
+        QMUIAlertAction *cancel = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:nil];
+        [alertvc addAction:cancel];
+        
+    //    [self presentViewController:alertvc animated:YES completion:nil];
+        [alertvc showWithAnimated:YES];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSource.count;
 }
