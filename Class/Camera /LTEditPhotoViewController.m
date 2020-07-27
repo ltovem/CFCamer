@@ -22,7 +22,6 @@
 
 #import <Qiniu/QNUtils.h>
 
-#import "LTTypingPhoto.h"
 
 @interface LTEditPhotoViewController ()
 
@@ -271,9 +270,11 @@
     self.photoImageView.image = image;
 }
 
-- (void)pushToSavePhotoVc{
+- (void)pushToSavePhotoVc:(ExportPageType)photoType{
     LTSavePhotoViewController *saveVc = [[LTSavePhotoViewController alloc]initWithStyle:UITableViewStylePlain];
     saveVc.photo = [UIImage imageNamed:@"123"];
+    saveVc.photoType = photoType;
+    saveVc.photoSizeType = self.photoSizetype;
     [self.navigationController pushViewController:saveVc animated:YES];
 }
 
@@ -282,7 +283,25 @@
 //导出照片
 - (void)exportButtionClick:(UIButton *)btn{
     NSLog(@"export");
-    [self pushToSavePhotoVc];
+    
+    
+    
+    QMUIAlertController *alertvc = [QMUIAlertController alertControllerWithTitle:@"导出照片" message:@"" preferredStyle:QMUIAlertControllerStyleActionSheet];
+    
+    QMUIAlertAction *action = [QMUIAlertAction actionWithTitle:@"高清电子照片" style:QMUIAlertActionStyleDefault handler:^(__kindof QMUIAlertController * _Nonnull aAlertController, QMUIAlertAction * _Nonnull action) {
+        [self pushToSavePhotoVc:ExportPageTypePhoto];
+    }];
+    QMUIAlertAction *typing = [QMUIAlertAction actionWithTitle:@"打印排版照片" style:QMUIAlertActionStyleDefault handler:^(__kindof QMUIAlertController * _Nonnull aAlertController, QMUIAlertAction * _Nonnull action) {
+        [self pushToSavePhotoVc:ExportPageTypeTypingPhoto];
+    }];
+    QMUIAlertAction *cancel = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:nil];
+    [alertvc addAction:action];
+    [alertvc addAction:typing];
+    [alertvc addAction:cancel];
+    
+//    [self presentViewController:alertvc animated:YES completion:nil];
+    [alertvc showWithAnimated:YES];
+    
     
     return;
     

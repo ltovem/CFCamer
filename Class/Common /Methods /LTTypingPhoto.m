@@ -32,6 +32,127 @@ static void tyed_async(dispatch_block_t block) {
 
 @implementation LTTypingPhoto
 
+
++ (UIImage *)typeingWithPhoto:(UIImage *)photo
+                    photoType:(LTPhotoType)type{
+    
+    CGFloat width = 1795;
+    CGFloat height = 1205;
+    CGFloat codeWidth = 500;//条码宽度
+    CGFloat codeHeight = 40;//条码高度
+    
+    CGFloat sepWidth = 20; //分割线宽度
+    
+    CGFloat maginWidth = 10;//外边距
+    CGFloat clpLineWidth = 40;//最小的标志线宽度
+    CGFloat clpLineHeight = clpLineWidth;
+    CGFloat padding = 10;
+    
+    CGFloat contentWidth = width - 2 * (maginWidth + clpLineWidth + padding);
+    CGFloat contentHeight = height - 2 * (maginWidth + clpLineWidth + padding) - codeHeight;
+    
+    
+    CGFloat VVcount = 0;
+    CGFloat VHcount = 0;
+    CGFloat HVcount = 0;
+    CGFloat HHcount = 0;
+    LTTypingType typingType = LTTypingTypeV;
+    CGSize photoSize = [LTTypingPhoto getPhotoSizeWithPhotoType:type];
+    VVcount = floor((contentWidth + sepWidth) / (photoSize.width + sepWidth));
+    VHcount = floor((contentHeight + sepWidth) / (photoSize.height + sepWidth));
+    HVcount = floor((contentWidth + sepWidth) / (photoSize.height + sepWidth));
+    HHcount = floor((contentHeight + sepWidth) / (photoSize.width + sepWidth));
+    NSLog(@"%ld ----- %f\n",(long)VVcount,VHcount);
+    NSLog(@"%ld ----- %f",(long)HVcount,HHcount);
+    //    CGFloat lineWidth = 0;
+    //    CGFloat outheight = 0;
+    CGImageRef refPhoto = photo.CGImage;
+    if (VVcount * VHcount < HVcount * HHcount) {
+        typingType = LTTypingTypeH;
+        VVcount = HVcount;
+        VHcount = HHcount;
+        photoSize = CGSizeMake(photoSize.height, photoSize.width);
+        refPhoto = [LTTypingPhoto rotateImageWithImage:photo];
+        NSLog(@"横排");
+    }else if(VVcount * VHcount == HVcount * HHcount){
+        CGFloat w1 = contentWidth - (VVcount - 1) * sepWidth - VVcount * photoSize.width;
+        CGFloat w2 = contentWidth - (HVcount - 1) * sepWidth - HVcount * photoSize.height;
+        CGFloat h1 = contentHeight - (VHcount - 1) * sepWidth - VHcount * photoSize.height;
+        CGFloat h2 = contentHeight - (HHcount - 1) * sepWidth - HHcount * photoSize.width;
+        if (MAX(w1, w2) / MIN(w1, w2) > MAX(h1, h2) / MIN(h1, h2)) {
+            typingType = LTTypingTypeH;
+            VVcount = HVcount;
+            VHcount = HHcount;
+            photoSize = CGSizeMake(photoSize.height, photoSize.width);
+            refPhoto = [self rotateImageWithImage:photo];
+        }
+        NSLog(@"竖排");
+    }
+    
+    
+    CGFloat lineWidth = (VVcount - 1) * sepWidth + VVcount * photoSize.width;
+    CGFloat outheight = (VHcount - 1) * sepWidth + VHcount * photoSize.height;
+    
+    clpLineWidth = (width - lineWidth) / 2.0;
+    clpLineHeight = (height - outheight) / 2.0;
+    
+    NSLog(@"width %f -- height %f",contentWidth,contentHeight);
+    
+    CGColorSpaceRef colorSpec = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL,
+                                                 width,
+                                                 height,
+                                                 8,
+                                                 0, colorSpec,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGContextSetRGBFillColor(context, 1, 1, 1, 1);
+    CGContextFillRect(context, CGRectMake(0, 0, width, height));
+    //        CGContextStrokePath(context);
+    
+    CGImageRef tiaoMaImage = [LTTypingPhoto generateBarCodeImage:@"12345678901234567890"];
+    
+    
+    
+    CGImageRef HClpImage = [LTTypingPhoto drawHClpLineWith:clpLineWidth height:outheight imageHeigh:photoSize.height HCount:VHcount maginWidth:maginWidth sepLineWidth:sepWidth];
+    
+    //左边剪裁标志线
+    CGContextDrawImage(context, CGRectMake( clpLineWidth / 2 , codeHeight + clpLineHeight, clpLineWidth / 2, outheight), HClpImage);
+    //右边剪裁标志线
+    CGContextDrawImage(context, CGRectMake(maginWidth * 2 + clpLineWidth  + lineWidth, codeHeight + clpLineHeight, clpLineWidth / 2, outheight), HClpImage);
+    
+    CGImageRef VClpImage = [LTTypingPhoto drawHVlpLineWithHeight:clpLineHeight width:lineWidth imageWidth:photoSize.width VCount:VVcount maginWidth:maginWidth sepLineWidth:sepWidth];
+    
+    //上边剪裁标志线
+    CGContextDrawImage(context, CGRectMake(maginWidth + clpLineWidth, codeHeight + clpLineHeight * 0.4 - maginWidth, lineWidth, clpLineHeight * 0.6), VClpImage);
+    //下边剪裁标志线
+    CGContextDrawImage(context, CGRectMake(maginWidth + clpLineWidth, codeHeight + outheight + maginWidth + clpLineHeight, lineWidth, clpLineHeight * 0.6), VClpImage);
+    //    CGContextDrawImage(context, CGRectMake(maginWidth * 2 + clpLineWidth  + lineWidth, codeHeight + clpLineHeight, clpLineWidth / 2, outheight), VClpImage);
+    
+    //绘制二维码
+    CGContextDrawImage(context,
+                       CGRectMake((width - codeWidth) / 2, maginWidth, codeWidth, codeHeight),
+                       tiaoMaImage);
+    
+    
+    //    VVcount = 4;
+    //    VHcount = 3;
+    
+    CGImageRef lineImage = [LTTypingPhoto drowimageLineWithImage:refPhoto width:photoSize.width height:photoSize.height sepLineWidth:sepWidth outWidth:lineWidth count:VVcount];
+    CGImageRef contentImage = [LTTypingPhoto drawContentWithLineImage:lineImage lineHeight:photoSize.height lineWidth:lineWidth sepLineWidth:sepWidth outHeight:outheight lineCount:VHcount];
+    
+    CGContextDrawImage(context, CGRectMake(maginWidth + clpLineWidth, codeHeight + clpLineHeight, lineWidth, outheight), contentImage);
+    
+    CGImageRef refImage = CGBitmapContextCreateImage(context);
+    //    self.imageView.image = [UIImage imageWithCGImage:refImage];
+    
+    
+    
+    
+    return [UIImage imageWithCGImage:refImage];
+    
+    
+}
+
 + (void)typeingWithPhoto:(UIImage *)photo
                photoType:(LTPhotoType)type
               typedImage:(void(^)(UIImage *typedImage))typed{
@@ -109,7 +230,7 @@ static void tyed_async(dispatch_block_t block) {
                                                      kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
         CGContextSetRGBFillColor(context, 1, 1, 1, 1);
         CGContextFillRect(context, CGRectMake(0, 0, width, height));
-//        CGContextStrokePath(context);
+        //        CGContextStrokePath(context);
         
         CGImageRef tiaoMaImage = [LTTypingPhoto generateBarCodeImage:@"12345678901234567890"];
         

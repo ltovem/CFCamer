@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)drawWatherWithImage:(UIImage *)image
                        watherSte:(NSString *)str;
+
++ (UIImage *)typeingWithPhoto:(UIImage *)photo
+                    photoType:(LTPhotoType)type;
 @end
 
 NS_ASSUME_NONNULL_END

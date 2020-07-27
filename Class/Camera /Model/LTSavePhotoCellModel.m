@@ -16,26 +16,29 @@
 
 @implementation LTSavePhotoCellModel
 
-+ (instancetype)initWithPhoto:(UIImage *)photo photoType:(PhotoColorType)type{
++ (instancetype)initWithPhoto:(UIImage *)photo
+                        price:(CGFloat)price
+                    photoType:(PhotoColorType)type{
     LTSavePhotoCellModel *model = [LTSavePhotoCellModel new];
     model.photo = photo;
+    model.price = price;
     switch (type) {
         case PhotoColorTypeWhite:
             {
                 model.title = @"高清白底照片";
-                model.subtitle = @"价格 :3元";
+                model.subtitle = [NSString stringWithFormat:@"价格 :¥%.2f",price];
             }
             break;
         case PhotoColorTypeBlue:
         {
             model.title = @"高清蓝底照片";
-            model.subtitle = @"价格 :3元";
+            model.subtitle = [NSString stringWithFormat:@"价格 :¥%.2f",price];
         }
         break;
         case PhotoColorTypeRead:
         {
             model.title = @"高清红底底照片";
-            model.subtitle = @"价格 :3元";
+            model.subtitle = [NSString stringWithFormat:@"价格 :¥%.2f",price];
         }
         break;
             
@@ -44,5 +47,11 @@
     }
     return model;
 }
+
+@end
+
+@implementation LTSavePhotoTypingCellModel
+
+
 
 @end

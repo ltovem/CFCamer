@@ -10,7 +10,7 @@
 // Created by LTOVE on 2020/7/26.
 // Copyright © 2020 LTOVE. All rights reserved.
 //
-    
+
 
 #import <Foundation/Foundation.h>
 
@@ -28,10 +28,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *subtitle;
+@property (nonatomic,assign)BOOL isSelect;
+@property (nonatomic,assign)CGFloat price;
 
 + (instancetype)initWithPhoto:(UIImage *)photo
-                    photoType:(PhotoColorType)type;
+                        price:(CGFloat)price
+                    photoType:(PhotoColorType )type;
 
+
+@end
+
+@interface LTSavePhotoTypingCellModel : LTSavePhotoCellModel
 
 @end
 

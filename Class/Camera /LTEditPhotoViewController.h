@@ -13,11 +13,13 @@
     
 
 #import <UIKit/UIKit.h>
+#import "LTTypingPhoto.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LTEditPhotoViewController : QMUICommonViewController
 @property (nonatomic,strong)UIImage *photo;
+@property (nonatomic,assign)LTPhotoType photoSizetype;
 @end
 
 NS_ASSUME_NONNULL_END

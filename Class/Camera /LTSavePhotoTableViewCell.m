@@ -22,18 +22,30 @@
 @property (nonatomic,strong)UILabel *subTitle;
 @property (nonatomic,strong)UIView *content;
 
+@property (nonatomic,strong)QMUIButton *selbtn;
+
+@property (nonatomic,strong)NSNumber *photoHeight;
+@property (nonatomic,assign)CGFloat bili;
 
 @end
 
 @implementation LTSavePhotoTableViewCell
 
 
+- (NSNumber *)photoHeight{
+    return @120;
+}
+- (CGFloat)bili{
+    return 1.4;
+}
 - (void)setModel:(LTSavePhotoCellModel *)Model{
     _Model = Model;
     self.photoview.image = Model.photo;
     self.title.text = Model.title;
     self.subTitle.text = Model.subtitle;
+    _selbtn.selected = Model.isSelect;
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -55,6 +67,13 @@
     self.photoview = [UIImageView new];
     self.title = [UILabel new];
     self.subTitle = [UILabel new];
+    self.selbtn = [QMUIButton buttonWithType:UIButtonTypeCustom];
+    
+    [_selbtn setBackgroundImage:[UIImage imageNamed:@"xuanze"] forState:UIControlStateNormal];
+    [_selbtn setBackgroundImage:[UIImage imageNamed:@"xuanzhe_sel"] forState:UIControlStateSelected];
+    
+//    _selbtn.selected = YES;
+    _selbtn.userInteractionEnabled = NO;
     
     UILabel *desc = [UILabel new];
     
@@ -70,6 +89,8 @@
     [_content addSubview:_photoview];
     [_content addSubview:_title];
     [_content addSubview:_subTitle];
+    [_content addSubview:_selbtn];
+    
     [_content addSubview:desc];
     _content.backgroundColor = [UIColor whiteColor];
     _content.layer.cornerRadius = 10;
@@ -85,8 +106,8 @@
     [self.photoview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.equalTo(self.content).offset(10);
         make.bottom.equalTo(self.content).offset(-10);
-        make.height.equalTo(@160);
-        make.height.mas_equalTo(self.photoview.mas_width).multipliedBy(1.4);
+        make.height.equalTo(self.photoHeight);
+        make.height.mas_equalTo(self.photoview.mas_width).multipliedBy(self.bili);
         
     }];
     [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -102,6 +123,11 @@
     [desc mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.subTitle.mas_bottom).offset(10);
     }];
+    [_selbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.content);
+        make.width.and.height.equalTo(@40);
+        make.right.equalTo(self.content).offset(-20);
+    }];
     
     
 }
@@ -112,6 +138,17 @@
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
+}
+
+@end
+
+@implementation LTSavePhotoTypingTableViewCell
+
+- (NSNumber *)photoHeight{
+    return @90;
+}
+- (CGFloat)bili{
+    return 0.7;
 }
 
 @end
