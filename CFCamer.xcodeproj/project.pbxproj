@@ -157,7 +157,6 @@
 		9BE5ED9B24B5E21D00828161 /* LTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED9A24B5E21D00828161 /* LTHomeViewController.m */; };
 		9BE5ED9E24B5E2CE00828161 /* LTAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5ED9D24B5E2CE00828161 /* LTAlbumViewController.m */; };
 		9BE5EDA124B5EA6100828161 /* LTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */; };
-		9BFB805C24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB805B24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -476,8 +475,6 @@
 		9BE5ED9D24B5E2CE00828161 /* LTAlbumViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTAlbumViewController.m; sourceTree = "<group>"; };
 		9BE5ED9F24B5EA6100828161 /* LTCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTCameraViewController.h; sourceTree = "<group>"; };
 		9BE5EDA024B5EA6100828161 /* LTCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTCameraViewController.m; sourceTree = "<group>"; };
-		9BFB805A24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTSaveTypingPhotoViewController.h; sourceTree = "<group>"; };
-		9BFB805B24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTSaveTypingPhotoViewController.m; sourceTree = "<group>"; };
 		AF0B2F11FA1273967CEB118C /* Pods-CFCamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer/Pods-CFCamer.debug.xcconfig"; sourceTree = "<group>"; };
 		C69175AE71CE290EF5BE4219 /* Pods-CFCamer-CFCamerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF40811524970F9F70FD0CA5 /* Pods-CFCamer-CFCamerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFCamer-CFCamerUITests.release.xcconfig"; path = "Target Support Files/Pods-CFCamer-CFCamerUITests/Pods-CFCamer-CFCamerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1102,8 +1099,6 @@
 				9B8DDD6124CBDF10004D4E08 /* LTEditPhotoViewController.m */,
 				9B51C5D224CDAA0E00F98950 /* LTSavePhotoViewController.h */,
 				9B51C5D324CDAA0E00F98950 /* LTSavePhotoViewController.m */,
-				9BFB805A24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.h */,
-				9BFB805B24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1375,7 +1370,6 @@
 				9BE5ED5F24B5C17000828161 /* QDCAShapeLoadingViewController.m in Sources */,
 				9B51C5D824CDABFA00F98950 /* LTSavePhotoTableViewCell.m in Sources */,
 				9BE5ED7624B5C17000828161 /* QDGridViewController.m in Sources */,
-				9BFB805C24CE9AA600FBE7FC /* LTSaveTypingPhotoViewController.m in Sources */,
 				9BE5ED4324B5C17000828161 /* QDImageViewController.m in Sources */,
 				9BE5EBF424B5BD3900828161 /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				9B8DDD6524CC52AD004D4E08 /* QMUITips+LTShow.m in Sources */,
